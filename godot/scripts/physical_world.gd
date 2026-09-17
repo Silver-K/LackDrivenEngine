@@ -9,11 +9,14 @@ var physics = Body.new()
 var bodies: Array = []
 var surfaces: Array = []
 var parameters: Array = []
+var room = Rect2()
 var time=0.0
 var last_error=""
 func _init(config: Dictionary = {}) -> void:
  var data: Dictionary = config if not config.is_empty() else JSON.parse_string(FileAccess.get_file_as_string("res://data/body_model.json"))
  parameters=data.bodies.duplicate(true)
+ var bounds: Array=data.get("room",[-100000,-100000,200000,200000])
+ room=Rect2(bounds[0],bounds[1],bounds[2],bounds[3])
  for p in parameters:
   last_error=core.validate(structure,p)
   if not last_error.is_empty(): return
@@ -23,7 +26,9 @@ func _init(config: Dictionary = {}) -> void:
   o.position=Vector2(item.position[0],item.position[1])
   surfaces.append(o)
 func sense(index: int) -> Array:
- return structure.senses.sense(index,bodies,parameters,surfaces)
+ var samples: Array=structure.senses.sense(index,bodies,parameters,surfaces)
+ samples.append_array(structure.self_senses.sense(bodies[index],parameters[index],parameters[index].receptor[0].size()))
+ return samples
 func association_strength(index: int) -> float:
  return structure.policy(parameters[index]).magnitude(bodies[index].memory)
 func step(dt: float) -> void:
@@ -42,10 +47,10 @@ func step(dt: float) -> void:
  time+=dt
  for i in range(bodies.size()):
   bodies[i]=pending[i].state
-  var feedback: Dictionary = physics.step(bodies[i],parameters[i],surfaces,pending[i].contributions,dt)
+  var feedback: Dictionary = physics.step(bodies[i],parameters[i],surfaces,pending[i].contributions,dt,room)
   bodies[i]=core.receive(structure,parameters[i],bodies[i],feedback,dt)
   bodies[i].contributions=pending[i].contributions
-  bodies[i].vectors=pending[i].contributions.map(func(c):return c.value)
+  bodies[i].vectors=pending[i].contributions.filter(func(c):return c.channel==0).map(func(c):return c.value)
  for i in range(bodies.size()):
   for j in range(i+1,bodies.size()):
    var a: Dictionary = bodies[i]
@@ -54,5 +59,5 @@ func step(dt: float) -> void:
    var minimum: float = parameters[i].radius+parameters[j].radius
    if away.length()<minimum:
     var correction: Vector2 = (away.normalized() if away.length()>0 else Vector2.RIGHT)*(minimum-away.length())*0.5
-    a.position=(a.position+correction).clamp(Vector2(72,240),Vector2(1025,605))
-    b.position=(b.position-correction).clamp(Vector2(72,240),Vector2(1025,605))
+    a.position=(a.position+correction).clamp(room.position+Vector2.ONE*parameters[i].radius,room.end-Vector2.ONE*parameters[i].radius)
+    b.position=(b.position-correction).clamp(room.position+Vector2.ONE*parameters[j].radius,room.end-Vector2.ONE*parameters[j].radius)

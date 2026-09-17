@@ -1,0 +1,82 @@
+test_modules
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS engine executes independent 2 dimensional rule
+PASS opposed scalar contributions survive without summation
+PASS state and structural definition not mutated by rule
+PASS feedback update permission belongs to supplied structure
+PASS engine executes independent 7 dimensional rule
+PASS opposed scalar contributions survive without summation
+PASS state and structural definition not mutated by rule
+PASS feedback update permission belongs to supplied structure
+PASS game definitions validate
+PASS malformed topology rejected before execution
+PASS equal net movement differs in opposed load
+PASS body retains the cost of simultaneous opposing contributions
+PASS body projection leaves original source contributions intact
+PASS body feedback affects tension through subject mapping only
+PASS subject disables learning without changing the engine
+PASS actual game keeps every dimension and memory contribution
+PASS five internal dimensions can receive four physical exchange channels
+PASS undeclared output channel rejected
+MODULE_RESULT checks=18 failures=0
+
+test_field
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS one body has no initial environmental associations
+PASS no preset receptor to environmental approach mapping
+PASS empty room contains no sensory objects
+PASS cue precedes mechanical effect
+PASS effect follows cue without continuing cue signal
+PASS cue-only control physically removes effect
+PASS silent apparatus cannot leak location through a zero signal sample
+PASS physical cover blocks propagation
+PASS same location receives field when cover removed
+PASS A contact produces mixed physical exchange
+PASS disabling exchange preserves sensory signals without relief
+PASS reset reconstructs the same untrained body
+PASS complete experiment snapshot restores
+PASS restored world apparatus and history continue identically
+PASS disk history round trip
+PASS disk history preserves numerical state and source records
+PASS stage selection changes environment not learned state
+PASS old scene saves explicitly rejected
+PASS observer labels cannot change physical or psychological evolution
+PASS five-minute free run remains finite and bounded
+PASS free experience forms association and simultaneous opposing load
+PASS unforced exploration makes both exchange zones reachable
+FREE_RUN extent=[P: (198.3755, 255.3496), S: (477.832, 339.6134)] contacts={ 0: true, 1: true } memory=0.03826466582233 max_load=0.89722539740639
+FIELD_RESULT checks=22 failures=0
+
+test_development
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PAIRED 0.63539517350728 UNPAIRED 0.15318824382569
+PASS forward pairing produces stronger cue response than delayed control
+PASS same age and experience without plasticity produce no learned association
+PASS response is selective to experienced cue rather than all stimuli
+PASS unfulfilled cue presentations extinguish acquired response
+PASS real physical apparatus pairing creates stronger opposing cue contribution than delayed control
+APPARATUS paired=-0.16108610032579 delayed=-0.03883645618116
+PASS single subject in minimal room
+PASS subject begins without learned release associations
+PASS learned cue changes live movement with identical physical state
+PASS experience snapshot saves
+PASS experience snapshot restores
+PASS restored history continues identically including eligibility and plasticity
+DEVELOPMENT_RESULT checks=11 failures=0
+
+test_lab_ui
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS fourth stage enables both exchanges cover and apparatus
+PASS scaled window hit testing selects the visible stage
+PASS experiment switches route to actual apparatus state
+PASS UI controls never inject a psychological state
+PASS simulation speed changes to four times
+PASS UI resets experience
+PASS pause control resumes time
+UI_RESULT checks=7 failures=0
+
+TOTAL checks=58 failures=0

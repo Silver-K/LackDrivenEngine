@@ -1,22 +1,39 @@
-# 同一屋檐下 · 母体与幼体
+# 张力 · 最小生命实验
 
-双击 `开始游戏.cmd` 启动 Godot 动画沙盒。现在有三个带预设关联的母体，以及三个从零关联出发的幼体。幼体通过短时感知痕迹与后续身体变化学习，成长没有预定年龄脚本。猫、狗和鼠的外形属于表现层；内部仅处理物理信号、连续维度和历史耦合，没有饥饿、口渴、猎物或行为任务标签。
+双击 `开始游戏.cmd` 启动。当前只有一个会移动、转向、形变的主体。它从空白环境关联开始，在连续物理作用与接触中改变状态，形成时序关联。
 
-点击物件补充资源、开关门或拨球；点击动物查看 X0–X3 状态、生活时间和经验关联。「感知范围」显示视距与响应向量。支持暂停、三倍速及重新开始。
+房间可以逐步启用：
 
-不同维度均为混合耦合，不对应命名需求。接触改变多个状态和历史响应。当前是手工参数的探索模型，并非经过动物行为验证的仿真；名称不决定动物必须做什么。详见 ARCHITECTURE.md；不可丢失的共识在 docs/CONSENSUS.md，模块接口在 docs/MODULES.md。
+1. **空房间**：观察身体自身动力与边界作用。
+2. **交换 A**：可感知的信号与接触后的混合交换。
+3. **线索 → 扰动**：每 12 秒，先出现 1.5 秒信号，再发生 2 秒机械扰动。可切换为仅线索。
+4. **B 与遮蔽**：加入不同交换关系与阻挡传播的实体遮蔽物。
 
-模块已分为通用执行器、主体结构、感受、可塑性、身体、环境与表现层。对抗贡献保留到身体层，界面显示对抗负荷及余波。
+阶段切换保留经历。可关闭交换但保留信号、交换 A/B 位置、固定或移动扰动源，观察相同结构如何随经历变化。暂停、四倍速、贡献箭头、轨迹和四维曲线用于观察；空格切换暂停。
+
+“保存经历／读取经历”保存完整身体、关联痕迹、装置时钟和历史。“重置身体”返回相同初始状态和空白关联，保留环境开关。没有自动存档。新的 `tension-room` 格式版本 4 保存到 Godot 用户目录 `TensionRoom/room-history-v5.bin`，不迁移或覆盖旧版本记录（包括房间版本1、2、3、4）。
+
+界面名称仅供观察。A、B 不代表固定需求；遮蔽物不直接降低张力。当前是手工结构参数的实验模型，并不保证形成特定行为或证明真实生物心理。
+
+架构共识见 [docs/CONSENSUS.md](docs/CONSENSUS.md)，模块边界见 [docs/MODULES.md](docs/MODULES.md)，实验设置和限制见 [docs/MINIMAL_ROOM.md](docs/MINIMAL_ROOM.md)。旧动物、酒馆和网页场景源码已移除，历史 artifacts 保留为历史记录。
 
 验证：
+
 ```powershell
 & ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_modules.gd
 & ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_field.gd
 & ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_development.gd
-& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_pet_ui.gd
-& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --path godot -- --pet-smoke
+& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_lab_ui.gd
+& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_motion.gd
+& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_quiescence.gd
+& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --headless --path godot --script tests/test_self_sense.gd
+& ./.tools/godot/Godot_v4.6-stable_win64_console.exe --path godot -- --lab-smoke
 ```
 
-可用“保存经历／继续生活”手动保存与延续成长；当前无自动存档。此前 artifacts 中的报告是历史版本记录，不适用于本次核心。
+最后一条生成 `artifacts/minimal-room.png` 并退出。
 
-存档格式现为4，旧格式3不自动迁移；不会因启动而覆盖旧存档。
+运动采用持续朝向、逐维推进与转向、可重放运动波动及实际碰撞反馈。修复前后对照见 [artifacts/motion-comparison.md](artifacts/motion-comparison.md)。不以走遍房间或左右均匀分布作为行为目标。
+
+低活动由身体的连续执行幅度与使用适应反馈形成，已删除常量推进并保留逐维作用符号。没有休息目标或定时停留。界面显示执行幅度与适应负荷；旧运动覆盖对照是历史版本，当前观察见 `artifacts/quiescence-observations.json`。
+
+当前二维主体选择感知速度、角速度、执行幅度和适应负荷；这是主体结构的可选自身感受映射。关闭该映射不改变身体物理，只会阻止这些量进入张力。当前连续自身样本不自动注册关联；主体结构可单独授予该权限。位置、目标和对象身份不在自身感受中。

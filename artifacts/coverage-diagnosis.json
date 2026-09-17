@@ -1,0 +1,360 @@
+[
+  {
+    "checkpoints": [
+      {
+        "max_x": 402.750122070313,
+        "min_x": 141.906448364258,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 402.750122070313,
+        "min_x": 141.906448364258,
+        "right_fraction": 0.0,
+        "seconds": 120
+      },
+      {
+        "max_x": 402.750122070313,
+        "min_x": 141.906448364258,
+        "right_fraction": 0.0,
+        "seconds": 180
+      },
+      {
+        "max_x": 402.750122070313,
+        "min_x": 141.906448364258,
+        "right_fraction": 0.0,
+        "seconds": 240
+      },
+      {
+        "max_x": 402.750122070313,
+        "min_x": 141.906448364258,
+        "right_fraction": 0.0,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      783,
+      10367,
+      6850,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_x": 402.750122070313,
+    "min_x": 141.906448364258,
+    "right_fraction": 0.0,
+    "variant": "empty"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 493.462341308594,
+        "min_x": 98.3578872680664,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 516.004028320313,
+        "min_x": 98.3578872680664,
+        "right_fraction": 0.0,
+        "seconds": 120
+      },
+      {
+        "max_x": 605.983520507813,
+        "min_x": 98.3578872680664,
+        "right_fraction": 0.0463888888888889,
+        "seconds": 180
+      },
+      {
+        "max_x": 606.014038085938,
+        "min_x": 98.3578872680664,
+        "right_fraction": 0.0790972222222222,
+        "seconds": 240
+      },
+      {
+        "max_x": 606.014038085938,
+        "min_x": 98.3578872680664,
+        "right_fraction": 0.0787222222222222,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      1155,
+      1218,
+      7434,
+      6776,
+      1417,
+      0,
+      0,
+      0
+    ],
+    "max_x": 606.014038085938,
+    "min_x": 98.3578872680664,
+    "right_fraction": 0.0787222222222222,
+    "variant": "A"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 503.203460693359,
+        "min_x": 96.1116333007813,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 558.091979980469,
+        "min_x": 96.1116333007813,
+        "right_fraction": 0.0136111111111111,
+        "seconds": 120
+      },
+      {
+        "max_x": 558.091979980469,
+        "min_x": 96.1116333007813,
+        "right_fraction": 0.00907407407407407,
+        "seconds": 180
+      },
+      {
+        "max_x": 558.091979980469,
+        "min_x": 96.1116333007813,
+        "right_fraction": 0.00680555555555556,
+        "seconds": 240
+      },
+      {
+        "max_x": 558.091979980469,
+        "min_x": 96.1116333007813,
+        "right_fraction": 0.00544444444444444,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      1512,
+      6589,
+      8580,
+      1221,
+      98,
+      0,
+      0,
+      0
+    ],
+    "max_x": 558.091979980469,
+    "min_x": 96.1116333007813,
+    "right_fraction": 0.00544444444444444,
+    "variant": "paired"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 675.888671875,
+        "min_x": 200.496475219727,
+        "right_fraction": 0.293055555555556,
+        "seconds": 60
+      },
+      {
+        "max_x": 675.888671875,
+        "min_x": 200.496475219727,
+        "right_fraction": 0.305277777777778,
+        "seconds": 120
+      },
+      {
+        "max_x": 675.888671875,
+        "min_x": 200.496475219727,
+        "right_fraction": 0.233611111111111,
+        "seconds": 180
+      },
+      {
+        "max_x": 675.888671875,
+        "min_x": 200.496475219727,
+        "right_fraction": 0.198055555555556,
+        "seconds": 240
+      },
+      {
+        "max_x": 675.888671875,
+        "min_x": 200.496475219727,
+        "right_fraction": 0.198555555555556,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true,
+      "1": true
+    },
+    "horizontal_bins": [
+      0,
+      462,
+      6182,
+      7782,
+      3483,
+      91,
+      0,
+      0
+    ],
+    "max_x": 675.888671875,
+    "min_x": 200.496475219727,
+    "right_fraction": 0.198555555555556,
+    "variant": "full"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 671.254150390625,
+        "min_x": 410.416473388672,
+        "right_fraction": 0.545555555555556,
+        "seconds": 60
+      },
+      {
+        "max_x": 671.254150390625,
+        "min_x": 410.416473388672,
+        "right_fraction": 0.508055555555556,
+        "seconds": 120
+      },
+      {
+        "max_x": 671.254150390625,
+        "min_x": 410.416473388672,
+        "right_fraction": 0.505833333333333,
+        "seconds": 180
+      },
+      {
+        "max_x": 671.254150390625,
+        "min_x": 410.416473388672,
+        "right_fraction": 0.51625,
+        "seconds": 240
+      },
+      {
+        "max_x": 671.254150390625,
+        "min_x": 410.416473388672,
+        "right_fraction": 0.504611111111111,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      0,
+      0,
+      195,
+      8722,
+      8924,
+      159,
+      0,
+      0
+    ],
+    "max_x": 671.254150390625,
+    "min_x": 410.416473388672,
+    "right_fraction": 0.504611111111111,
+    "variant": "empty_center"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 500.516815185547,
+        "min_x": 97.770263671875,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 500.516815185547,
+        "min_x": 97.770263671875,
+        "right_fraction": 0.0,
+        "seconds": 120
+      },
+      {
+        "max_x": 500.516815185547,
+        "min_x": 97.770263671875,
+        "right_fraction": 0.0,
+        "seconds": 180
+      },
+      {
+        "max_x": 500.516815185547,
+        "min_x": 97.770263671875,
+        "right_fraction": 0.0,
+        "seconds": 240
+      },
+      {
+        "max_x": 500.516815185547,
+        "min_x": 97.770263671875,
+        "right_fraction": 0.0,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      1147,
+      6511,
+      9702,
+      640,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_x": 500.516815185547,
+    "min_x": 97.770263671875,
+    "right_fraction": 0.0,
+    "variant": "A_frozen"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 120
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 180
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 240
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      0,
+      18000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_x": 280.0,
+    "min_x": 280.0,
+    "right_fraction": 0.0,
+    "variant": "empty_no_exploration"
+  }
+]

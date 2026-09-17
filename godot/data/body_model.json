@@ -2,515 +2,23 @@
   "bodies": [
     {
       "position": [
-        390,
-        360
+        280,
+        430
       ],
-      "radius": 20,
-      "speed": 85,
-      "range": 300,
+      "radius": 15,
+      "speed": 72,
+      "range": 800,
       "emission": [
         0.3,
         0.5,
         0.9
       ],
       "state": [
-        0.25,
+        0.65,
         0.45,
-        0.2,
-        0.35
-      ],
-      "drift": [
-        0.005,
-        0.004,
-        0.003,
-        0.004
-      ],
-      "receptor": [
-        [
-          0.8,
-          0.2,
-          -0.2,
-          0.3
-        ],
-        [
-          0.1,
-          0.7,
-          0.3,
-          -0.4
-        ],
-        [
-          -0.3,
-          0.2,
-          0.7,
-          0.1
-        ],
-        [
-          0.4,
-          -0.2,
-          0.1,
-          0.6
-        ]
-      ],
-      "coupling": [
-        [
-          0,
-          0.18,
-          -0.1,
-          0.12
-        ],
-        [
-          -0.12,
-          0,
-          0.22,
-          -0.08
-        ],
-        [
-          0.1,
-          -0.2,
-          0,
-          0.15
-        ],
-        [
-          0.16,
-          0.1,
-          -0.13,
-          0
-        ]
-      ],
-      "motor": [
-        0.45,
-        0.2,
-        -0.2,
-        0.12
-      ],
-      "size_gain": 1.8,
-      "mass_gain": -2.5,
-      "associations": [
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.9,
-            0.2,
-            0.0
-          ],
-          "effect": [
-            -0.041999999999999996,
-            0.012,
-            -0.018,
-            0.006
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.15,
-            0.6,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.03,
-            0.012
-          ]
-        }
-      ],
-      "learning_rate": 0.55,
-      "exploration": 0.3,
-      "channels": [
-        0
-      ],
-      "trace_window": 2.5,
-      "plasticity_enabled": true,
-      "feedback_load": [
-        0.002,
-        -0.001,
-        0.002,
-        0.001
-      ],
-      "body_response": {
-        "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
-        "resistance": 0.15,
-        "response": 4.0
-      },
-      "dynamics": {
-        "sensory_gain": 0.35,
-        "coupling_gain": 0.15,
-        "decay": 0.025,
-        "bound": 1.5,
-        "trace_rate": 0.4,
-        "phase_rate": 0.6,
-        "association_gain": 12.0,
-        "motor_offset": 0.35,
-        "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
-      },
-      "exchange_channels": 4,
-      "feedback_exchange": [
-        [
-          0.04,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0.04,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0.04,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0.04
-        ]
-      ]
-    },
-    {
-      "position": [
-        590,
-        490
-      ],
-      "radius": 26,
-      "speed": 100,
-      "range": 280,
-      "emission": [
-        0.8,
-        0.5,
-        0.2
-      ],
-      "state": [
-        0.25,
-        0.45,
-        0.2,
-        0.35
-      ],
-      "drift": [
-        0.005,
-        0.004,
-        0.003,
-        0.004
-      ],
-      "receptor": [
-        [
-          0.8,
-          0.2,
-          -0.2,
-          0.3
-        ],
-        [
-          0.1,
-          0.7,
-          0.3,
-          -0.4
-        ],
-        [
-          -0.3,
-          0.2,
-          0.7,
-          0.1
-        ],
-        [
-          0.4,
-          -0.2,
-          0.1,
-          0.6
-        ]
-      ],
-      "coupling": [
-        [
-          0,
-          0.18,
-          -0.1,
-          0.12
-        ],
-        [
-          -0.12,
-          0,
-          0.22,
-          -0.08
-        ],
-        [
-          0.1,
-          -0.2,
-          0,
-          0.15
-        ],
-        [
-          0.16,
-          0.1,
-          -0.13,
-          0
-        ]
-      ],
-      "motor": [
-        0.25,
-        0.15,
-        0.1,
-        -0.15
-      ],
-      "size_gain": -1.7,
-      "mass_gain": -0.3,
-      "associations": [
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.9,
-            0.2,
-            0.0
-          ],
-          "effect": [
-            -0.041999999999999996,
-            0.012,
-            -0.018,
-            0.006
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.15,
-            0.6,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.03,
-            0.012
-          ]
-        }
-      ],
-      "learning_rate": 0.55,
-      "exploration": 0.3,
-      "channels": [
-        0
-      ],
-      "trace_window": 2.5,
-      "plasticity_enabled": true,
-      "feedback_load": [
-        0.002,
-        -0.001,
-        0.002,
-        0.001
-      ],
-      "body_response": {
-        "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
-        "resistance": 0.15,
-        "response": 4.0
-      },
-      "dynamics": {
-        "sensory_gain": 0.35,
-        "coupling_gain": 0.15,
-        "decay": 0.025,
-        "bound": 1.5,
-        "trace_rate": 0.4,
-        "phase_rate": 0.6,
-        "association_gain": 12.0,
-        "motor_offset": 0.35,
-        "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
-      },
-      "exchange_channels": 4,
-      "feedback_exchange": [
-        [
-          0.04,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0.04,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0.04,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0.04
-        ]
-      ]
-    },
-    {
-      "position": [
-        230,
-        505
-      ],
-      "radius": 11,
-      "speed": 110,
-      "range": 250,
-      "emission": [
-        0.2,
-        0.8,
+        0.3,
         0.4
       ],
-      "state": [
-        0.25,
-        0.45,
-        0.2,
-        0.35
-      ],
       "drift": [
         0.005,
         0.004,
@@ -522,271 +30,41 @@
           0.8,
           0.2,
           -0.2,
-          0.3
+          0.3,
+          -0.18,
+          0.1,
+          0.06,
+          -0.12
         ],
         [
           0.1,
           0.7,
           0.3,
-          -0.4
+          -0.4,
+          0.12,
+          0.2,
+          -0.08,
+          0.1
         ],
         [
           -0.3,
           0.2,
           0.7,
-          0.1
+          0.1,
+          -0.15,
+          0.08,
+          0.12,
+          0.06
         ],
         [
           0.4,
           -0.2,
           0.1,
-          0.6
-        ]
-      ],
-      "coupling": [
-        [
-          0,
-          0.18,
-          -0.1,
-          0.12
-        ],
-        [
+          0.6,
+          0.1,
           -0.12,
-          0,
-          0.22,
-          -0.08
-        ],
-        [
-          0.1,
-          -0.2,
-          0,
-          0.15
-        ],
-        [
-          0.16,
-          0.1,
-          -0.13,
-          0
-        ]
-      ],
-      "motor": [
-        0.2,
-        0.4,
-        -0.1,
-        0.2
-      ],
-      "size_gain": -2.6,
-      "mass_gain": -3.0,
-      "associations": [
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.9,
-            0.2,
-            0.1,
-            0.0
-          ],
-          "effect": [
-            0.018,
-            -0.048,
-            0.012,
-            -0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.9,
-            0.2,
-            0.0
-          ],
-          "effect": [
-            -0.041999999999999996,
-            0.012,
-            -0.018,
-            0.006
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.15,
-            0.2,
-            0.5,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.036,
-            0.012
-          ]
-        },
-        {
-          "signature": [
-            0.1,
-            0.15,
-            0.6,
-            0.0
-          ],
-          "effect": [
-            0.006,
-            -0.006,
-            -0.03,
-            0.012
-          ]
-        }
-      ],
-      "learning_rate": 0.55,
-      "exploration": 0.3,
-      "channels": [
-        0
-      ],
-      "trace_window": 2.5,
-      "plasticity_enabled": true,
-      "feedback_load": [
-        0.002,
-        -0.001,
-        0.002,
-        0.001
-      ],
-      "body_response": {
-        "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
-        "resistance": 0.15,
-        "response": 4.0
-      },
-      "dynamics": {
-        "sensory_gain": 0.35,
-        "coupling_gain": 0.15,
-        "decay": 0.025,
-        "bound": 1.5,
-        "trace_rate": 0.4,
-        "phase_rate": 0.6,
-        "association_gain": 12.0,
-        "motor_offset": 0.35,
-        "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
-      },
-      "exchange_channels": 4,
-      "feedback_exchange": [
-        [
-          0.04,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0.04,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0.04,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0.04
-        ]
-      ]
-    },
-    {
-      "position": [
-        320,
-        545
-      ],
-      "radius": 13.0,
-      "speed": 68.0,
-      "range": 300,
-      "emission": [
-        0.3,
-        0.5,
-        0.9
-      ],
-      "state": [
-        0.3,
-        0.25,
-        0.4,
-        0.2
-      ],
-      "drift": [
-        0.005,
-        0.004,
-        0.003,
-        0.004
-      ],
-      "receptor": [
-        [
-          0.8,
-          0.2,
-          -0.2,
-          0.3
-        ],
-        [
-          0.1,
-          0.7,
-          0.3,
-          -0.4
-        ],
-        [
-          -0.3,
-          0.2,
-          0.7,
-          0.1
-        ],
-        [
-          0.4,
-          -0.2,
-          0.1,
-          0.6
+          0.18,
+          0.08
         ]
       ],
       "coupling": [
@@ -825,9 +103,9 @@
       "mass_gain": 0,
       "associations": [],
       "learning_rate": 0.85,
-      "exploration": 0.6,
       "channels": [
-        0
+        0,
+        1
       ],
       "trace_window": 2.5,
       "plasticity_enabled": true,
@@ -839,10 +117,20 @@
       ],
       "body_response": {
         "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
+        "load_gain": 0.03,
+        "recovery": 0.025,
         "resistance": 0.15,
-        "response": 4.0
+        "response": 4.0,
+        "angular_drag": 1.5,
+        "heading_alignment": 0.4,
+        "angular_load": 0.3,
+        "restitution": 0.45,
+        "activation_initial": 0.8,
+        "activation_slope": 40.0,
+        "activation_rate": 2.0,
+        "activation_threshold": 0.25,
+        "self_excitation": 0.5,
+        "use_gain": 0.08
       },
       "dynamics": {
         "sensory_gain": 0.35,
@@ -850,12 +138,11 @@
         "decay": 0.025,
         "bound": 1.5,
         "trace_rate": 0.4,
-        "phase_rate": 0.6,
         "association_gain": 12.0,
         "motor_offset": 0.35,
         "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
+        "attention_limit": 0.2,
+        "attention_gain": 0.12
       },
       "exchange_channels": 4,
       "feedback_exchange": [
@@ -883,562 +170,124 @@
           0,
           0.04
         ]
-      ]
-    },
-    {
-      "position": [
-        655,
-        535
       ],
-      "radius": 16.900000000000002,
-      "speed": 80.0,
-      "range": 280,
-      "emission": [
-        0.8,
-        0.5,
-        0.2
-      ],
-      "state": [
-        0.3,
-        0.25,
-        0.4,
-        0.2
-      ],
-      "drift": [
-        0.005,
-        0.004,
-        0.003,
-        0.004
-      ],
-      "receptor": [
-        [
-          0.8,
-          0.2,
-          -0.2,
-          0.3
+      "locomotion": {
+        "gain": 1.15,
+        "heading": 0.0,
+        "propulsion": [
+          0.6,
+          -0.15,
+          0.5,
+          -0.1
         ],
-        [
-          0.1,
-          0.7,
-          0.3,
-          -0.4
-        ],
-        [
+        "turn": [
+          0.35,
           -0.3,
           0.2,
-          0.7,
-          0.1
+          -0.25
         ],
-        [
-          0.4,
-          -0.2,
-          0.1,
-          0.6
-        ]
-      ],
-      "coupling": [
-        [
-          0,
-          0.18,
-          -0.1,
-          0.12
-        ],
-        [
-          -0.12,
-          0,
-          0.22,
-          -0.08
-        ],
-        [
-          0.1,
-          -0.2,
-          0,
-          0.15
-        ],
-        [
-          0.16,
-          0.1,
-          -0.13,
-          0
-        ]
-      ],
-      "motor": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "size_gain": 0,
-      "mass_gain": 0,
-      "associations": [],
-      "learning_rate": 0.85,
-      "exploration": 0.6,
-      "channels": [
-        0
-      ],
-      "trace_window": 2.5,
-      "plasticity_enabled": true,
-      "feedback_load": [
-        0.002,
-        -0.001,
-        0.002,
-        0.001
-      ],
-      "body_response": {
-        "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
-        "resistance": 0.15,
-        "response": 4.0
+        "seed": 104729,
+        "sample_interval": 0.5,
+        "correlation_time": 1.5,
+        "fluctuation_gain": 0.65
       },
-      "dynamics": {
-        "sensory_gain": 0.35,
-        "coupling_gain": 0.15,
-        "decay": 0.025,
-        "bound": 1.5,
-        "trace_rate": 0.4,
-        "phase_rate": 0.6,
-        "association_gain": 12.0,
-        "motor_offset": 0.35,
-        "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
-      },
-      "exchange_channels": 4,
-      "feedback_exchange": [
-        [
-          0.04,
-          0,
-          0,
-          0
+      "self_sense": {
+        "enabled": true,
+        "channels": [
+          {
+            "input": 4,
+            "measure": "speed",
+            "gain": 0.013888888888888888,
+            "limit": 1.0
+          },
+          {
+            "input": 5,
+            "measure": "angular_velocity",
+            "gain": 0.2,
+            "limit": 1.0
+          },
+          {
+            "input": 6,
+            "measure": "activation",
+            "gain": 1.0,
+            "limit": 1.0
+          },
+          {
+            "input": 7,
+            "measure": "strain",
+            "gain": 0.5,
+            "limit": 1.0
+          }
         ],
-        [
-          0,
-          0.04,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0.04,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0.04
-        ]
-      ]
-    },
-    {
-      "position": [
-        445,
-        290
-      ],
-      "radius": 7.15,
-      "speed": 88.0,
-      "range": 250,
-      "emission": [
-        0.2,
-        0.8,
-        0.4
-      ],
-      "state": [
-        0.3,
-        0.25,
-        0.4,
-        0.2
-      ],
-      "drift": [
-        0.005,
-        0.004,
-        0.003,
-        0.004
-      ],
-      "receptor": [
-        [
-          0.8,
-          0.2,
-          -0.2,
-          0.3
-        ],
-        [
-          0.1,
-          0.7,
-          0.3,
-          -0.4
-        ],
-        [
-          -0.3,
-          0.2,
-          0.7,
-          0.1
-        ],
-        [
-          0.4,
-          -0.2,
-          0.1,
-          0.6
-        ]
-      ],
-      "coupling": [
-        [
-          0,
-          0.18,
-          -0.1,
-          0.12
-        ],
-        [
-          -0.12,
-          0,
-          0.22,
-          -0.08
-        ],
-        [
-          0.1,
-          -0.2,
-          0,
-          0.15
-        ],
-        [
-          0.16,
-          0.1,
-          -0.13,
-          0
-        ]
-      ],
-      "motor": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "size_gain": 0,
-      "mass_gain": 0,
-      "associations": [],
-      "learning_rate": 0.85,
-      "exploration": 0.6,
-      "channels": [
-        0
-      ],
-      "trace_window": 2.5,
-      "plasticity_enabled": true,
-      "feedback_load": [
-        0.002,
-        -0.001,
-        0.002,
-        0.001
-      ],
-      "body_response": {
-        "limit": 1.5,
-        "load_gain": 0.15,
-        "recovery": 0.4,
-        "resistance": 0.15,
-        "response": 4.0
-      },
-      "dynamics": {
-        "sensory_gain": 0.35,
-        "coupling_gain": 0.15,
-        "decay": 0.025,
-        "bound": 1.5,
-        "trace_rate": 0.4,
-        "phase_rate": 0.6,
-        "association_gain": 12.0,
-        "motor_offset": 0.35,
-        "motor_gain": 0.4,
-        "attention_limit": 0.18,
-        "attention_gain": 0.04
-      },
-      "exchange_channels": 4,
-      "feedback_exchange": [
-        [
-          0.04,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0.04,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0.04,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0.04
-        ]
-      ]
+        "plasticity": false
+      }
     }
   ],
   "surfaces": [
     {
       "position": [
-        765,
-        265
+        390,
+        435
       ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
+      "radius": 55,
       "emission": [
-        0.9,
-        0.2,
-        0.1
+        1,
+        0.12,
+        0.05
       ],
       "exchange": [
-        0.3,
-        -0.8,
-        0.2,
-        -0.2
-      ],
-      "reservoir": 100.0,
-      "compliance": 0.1,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        880,
-        300
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.9,
-        0.2,
-        0.1
-      ],
-      "exchange": [
-        0.3,
-        -0.8,
-        0.2,
-        -0.2
-      ],
-      "reservoir": 100.0,
-      "compliance": 0.1,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        375,
-        475
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.9,
-        0.2,
-        0.1
-      ],
-      "exchange": [
-        0.3,
-        -0.8,
-        0.2,
-        -0.2
-      ],
-      "reservoir": 100.0,
-      "compliance": 0.1,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        790,
-        450
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.1,
-        0.9,
-        0.2
-      ],
-      "exchange": [
-        -0.7,
-        0.2,
-        -0.3,
-        0.1
-      ],
-      "reservoir": 100.0,
-      "compliance": 0.1,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        210,
-        265
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.15,
-        0.2,
-        0.5
-      ],
-      "exchange": [
-        0.1,
-        -0.1,
-        -0.6,
-        0.2
-      ],
-      "reservoir": -1.0,
-      "compliance": 0.9,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        890,
-        565
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.15,
-        0.2,
-        0.5
-      ],
-      "exchange": [
-        0.1,
-        -0.1,
-        -0.6,
-        0.2
-      ],
-      "reservoir": -1.0,
-      "compliance": 0.9,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        125,
-        465
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 14,
-      "emission": [
-        0.1,
-        0.15,
-        0.6
-      ],
-      "exchange": [
-        0.1,
-        -0.1,
-        -0.5,
-        0.2
-      ],
-      "reservoir": -1.0,
-      "compliance": 0.9,
-      "movable": false,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        490,
-        390
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
+        -3,
         0.6,
-        0.4,
-        0.7
-      ],
-      "exchange": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "reservoir": -1.0,
-      "compliance": 0.1,
-      "movable": true,
-      "gate": false,
-      "open": false
-    },
-    {
-      "position": [
-        1015,
-        365
-      ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
-      "emission": [
-        0.3,
-        0.3,
+        -0.4,
         0.2
       ],
-      "exchange": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "reservoir": -1.0,
-      "compliance": 0.1,
+      "opacity": 0,
+      "aperture": 100,
+      "reservoir": -1,
+      "compliance": 1.2,
       "movable": false,
-      "gate": true,
-      "open": false
+      "gate": false,
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
     },
     {
       "position": [
-        500,
-        225
+        685,
+        435
       ],
-      "radius": 30,
-      "opacity": 0,
-      "aperture": 1000,
+      "radius": 55,
       "emission": [
-        0.3,
-        0.5,
+        0.1,
+        1,
         0.1
       ],
       "exchange": [
-        0,
-        0,
-        0,
-        0
+        0.6,
+        -3,
+        0.3,
+        -0.7
       ],
-      "reservoir": -1.0,
-      "compliance": 0.1,
+      "opacity": 0,
+      "aperture": 100,
+      "reservoir": -1,
+      "compliance": 1.2,
       "movable": false,
       "gate": false,
-      "open": false
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
     },
     {
       "position": [
-        285,
-        395
+        835,
+        480
       ],
-      "radius": 38,
-      "opacity": 1,
-      "aperture": 1000,
+      "radius": 27,
       "emission": [
         0,
         0,
@@ -1450,11 +299,110 @@
         0,
         0
       ],
-      "reservoir": -1.0,
-      "compliance": 0.1,
+      "opacity": 1,
+      "aperture": 0,
+      "reservoir": -1,
+      "compliance": 1.2,
       "movable": false,
       "gate": false,
-      "open": false
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
+    },
+    {
+      "position": [
+        875,
+        510
+      ],
+      "radius": 27,
+      "emission": [
+        0,
+        0,
+        0
+      ],
+      "exchange": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opacity": 1,
+      "aperture": 0,
+      "reservoir": -1,
+      "compliance": 1.2,
+      "movable": false,
+      "gate": false,
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
+    },
+    {
+      "position": [
+        915,
+        480
+      ],
+      "radius": 27,
+      "emission": [
+        0,
+        0,
+        0
+      ],
+      "exchange": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opacity": 1,
+      "aperture": 0,
+      "reservoir": -1,
+      "compliance": 1.2,
+      "movable": false,
+      "gate": false,
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
+    },
+    {
+      "position": [
+        760,
+        325
+      ],
+      "radius": 18,
+      "emission": [
+        0,
+        0,
+        1
+      ],
+      "exchange": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "opacity": 0,
+      "aperture": 100,
+      "reservoir": -1,
+      "compliance": 1.2,
+      "movable": false,
+      "gate": false,
+      "open": true,
+      "active": true,
+      "exchange_enabled": true,
+      "field_strength": 0,
+      "field_radius": 600
     }
+  ],
+  "room": [
+    57,
+    225,
+    983,
+    395
   ]
 }

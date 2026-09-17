@@ -1,0 +1,118 @@
+test_modules
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS engine executes independent 2 dimensional rule
+PASS opposed scalar contributions survive without summation
+PASS state and structural definition not mutated by rule
+PASS feedback update permission belongs to supplied structure
+PASS engine executes independent 7 dimensional rule
+PASS opposed scalar contributions survive without summation
+PASS state and structural definition not mutated by rule
+PASS feedback update permission belongs to supplied structure
+PASS game definitions validate
+PASS malformed topology rejected before execution
+PASS equal net movement differs in opposed load
+PASS body retains the cost of simultaneous opposing contributions
+PASS body projection leaves original source contributions intact
+PASS body feedback affects tension through subject mapping only
+PASS subject disables learning without changing the engine
+PASS actual game keeps every dimension and memory contribution
+PASS five internal dimensions can receive four physical exchange channels
+PASS undeclared output channel rejected
+MODULE_RESULT checks=18 failures=0
+
+test_field
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS one body has no initial environmental associations
+PASS no preset receptor to environmental approach mapping
+PASS empty room contains no sensory objects
+PASS cue precedes mechanical effect
+PASS effect follows cue without continuing cue signal
+PASS cue-only control physically removes effect
+PASS silent apparatus cannot leak location through a zero signal sample
+PASS physical cover blocks propagation
+PASS same location receives field when cover removed
+PASS A contact produces mixed physical exchange
+PASS disabling exchange preserves sensory signals without relief
+PASS reset reconstructs the same untrained body
+PASS complete experiment snapshot restores
+PASS restored world apparatus and history continue identically
+PASS disk history round trip
+PASS disk history preserves numerical state and source records
+PASS stage selection changes environment not learned state
+PASS old scene saves explicitly rejected
+PASS old phase-driven motor snapshots cannot enter the new dynamics
+PASS observer labels cannot change physical or psychological evolution
+PASS five-minute free run remains finite and bounded
+PASS free experience forms association and simultaneous opposing load
+PASS both exchange zones remain physically accessible without imposing visits
+FREE_RUN extent=[P: (130.4554, 271.9177), S: (285.4688, 333.0823)] contacts={ 0: true } memory=0.00659198401512 max_load=2.15384149286312
+FIELD_RESULT checks=23 failures=0
+
+test_development
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PAIRED 0.63539517350728 UNPAIRED 0.15318824382569
+PASS forward pairing produces stronger cue response than delayed control
+PASS same age and experience without plasticity produce no learned association
+PASS response is selective to experienced cue rather than all stimuli
+PASS unfulfilled cue presentations extinguish acquired response
+PASS real physical apparatus pairing creates stronger opposing cue contribution than delayed control
+APPARATUS paired=-0.16108610032579 delayed=-0.03883645618116
+PASS single subject in minimal room
+PASS subject begins without learned release associations
+PASS learned cue changes live movement with identical physical state
+PASS experience snapshot saves
+PASS experience snapshot restores
+PASS restored history continues identically including eligibility and plasticity
+DEVELOPMENT_RESULT checks=11 failures=0
+
+test_lab_ui
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS fourth stage enables both exchanges cover and apparatus
+PASS scaled window hit testing selects the visible stage
+PASS experiment switches route to actual apparatus state
+PASS UI controls never inject a psychological state
+PASS simulation speed changes to four times
+PASS UI resets experience
+PASS pause control resumes time
+UI_RESULT checks=7 failures=0
+
+test_motion
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS opposing torques retain load despite equal orientation
+PASS turning and per-dimension propulsion remain distinct contributions
+PASS no invisible repulsion before wall contact
+PASS wall blocks radius-aware body and applies normal impulse
+PASS physical collision affects tension through subject exchange mapping
+PASS collision follows supplied environment geometry
+PASS translation leaves motor dynamics unchanged
+PASS rotation rotates the trajectory without a privileged world axis
+PASS motor fluctuation stream belongs to each independent body
+PASS steady internal state yields persistent motion without a periodic return
+PASS removing motor drive does not activate hidden room exploration
+MOTION_RESULT checks=11 failures=0
+
+test_quiescence
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS zero state has no tonic propulsion or independent turning
+PASS constant input produces sustained low activity and recovery without timers
+PASS removing use-dependent adaptation removes the pause under the same input
+PASS no drive permits load recovery without creating motion
+PASS low motor activity does not block external physical displacement
+PASS stillness from opposition differs from no-drive stillness
+PASS adaptation and execution state restore with history
+PASS adaptation history resumes exactly
+PASS stage 1 remains finite
+PASS stage 2 remains finite
+PASS stage 3 remains finite
+PASS stage 4 remains finite
+OBSERVATIONS [{"extent":"[P: (72.0, 240.0), S: (486.2788, 365.0)]","longest_below_1px_s":28.1999999999997,"stage":1,"total_below_1px_s":204.050000000055},{"extent":"[P: (72.0, 240.0), S: (950.1365, 365.0)]","longest_below_1px_s":47.4499999999986,"stage":2,"total_below_1px_s":219.6833333334},{"extent":"[P: (72.0, 340.6847), S: (333.0616, 264.3153)]","longest_below_1px_s":29.9166666666662,"stage":3,"total_below_1px_s":204.316666666721},{"extent":"[P: (176.1567, 336.8751), S: (300.955, 268.1249)]","longest_below_1px_s":34.5499999999993,"stage":4,"total_below_1px_s":212.116666666728}]
+CONSTANT_INPUT longest_low=33.7499999999994
+QUIESCENCE_RESULT checks=12 failures=0
+
+TOTAL checks=82 failures=0

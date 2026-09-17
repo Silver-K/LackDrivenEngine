@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="同一屋檐下 · 小动物之家"
-config/description="多主体动力引擎驱动的动画动物生活沙盒。"
+config/name="张力 · 最小生命实验"
+config/description="单主体、物理交换、时序关联与连续贡献的最小实验房间。"
 run/main_scene="res://main.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="PetHouse"
+config/custom_user_dir_name="TensionRoom"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [display]

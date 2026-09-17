@@ -1,0 +1,360 @@
+[
+  {
+    "checkpoints": [
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.443055555555556,
+        "seconds": 60
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.406527777777778,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.430925925925926,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.430277777777778,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.440777777777778,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      3462,
+      2513,
+      2032,
+      2059,
+      2152,
+      2009,
+      1900,
+      1873
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.440777777777778,
+    "variant": "empty"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 872.688110351563,
+        "min_x": 72.0,
+        "right_fraction": 0.289444444444444,
+        "seconds": 60
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.45375,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.458148148148148,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.457152777777778,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.466888888888889,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      3101,
+      2169,
+      2565,
+      1761,
+      1710,
+      2049,
+      2104,
+      2541
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.466888888888889,
+    "variant": "A"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 425.843719482422,
+        "min_x": 72.0,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 757.535522460938,
+        "min_x": 72.0,
+        "right_fraction": 0.105555555555556,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.28537037037037,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.44125,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.499277777777778,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      2046,
+      1893,
+      3505,
+      1569,
+      1516,
+      1583,
+      2997,
+      2891
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.499277777777778,
+    "variant": "paired"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 682.568359375,
+        "min_x": 72.0,
+        "right_fraction": 0.162222222222222,
+        "seconds": 60
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.343194444444444,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.351018518518519,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.378333333333333,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.345,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true,
+      "1": true
+    },
+    "horizontal_bins": [
+      3105,
+      3041,
+      3248,
+      2396,
+      3003,
+      1991,
+      618,
+      598
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.345,
+    "variant": "full"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.634166666666667,
+        "seconds": 60
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.623333333333333,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.563240740740741,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.524583333333333,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.527888888888889,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      2157,
+      2120,
+      2170,
+      2051,
+      2150,
+      2257,
+      2482,
+      2613
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.527888888888889,
+    "variant": "empty_center"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.466388888888889,
+        "seconds": 60
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.441111111111111,
+        "seconds": 120
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.361944444444444,
+        "seconds": 180
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.405138888888889,
+        "seconds": 240
+      },
+      {
+        "max_x": 1025.0,
+        "min_x": 72.0,
+        "right_fraction": 0.420277777777778,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+      "0": true
+    },
+    "horizontal_bins": [
+      4491,
+      2462,
+      1908,
+      1574,
+      2031,
+      1887,
+      1892,
+      1755
+    ],
+    "max_x": 1025.0,
+    "min_x": 72.0,
+    "right_fraction": 0.420277777777778,
+    "variant": "A_frozen"
+  },
+  {
+    "checkpoints": [
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 60
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 120
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 180
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 240
+      },
+      {
+        "max_x": 280.0,
+        "min_x": 280.0,
+        "right_fraction": 0.0,
+        "seconds": 300
+      }
+    ],
+    "contacts": {
+
+    },
+    "horizontal_bins": [
+      0,
+      18000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "max_x": 280.0,
+    "min_x": 280.0,
+    "right_fraction": 0.0,
+    "variant": "empty_no_exploration"
+  }
+]
