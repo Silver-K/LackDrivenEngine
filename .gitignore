@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+test-results/
+.tools/
+godot/.godot/
+godot/build/
+artifacts/*.log

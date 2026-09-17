@@ -1,0 +1,33 @@
+{
+  "autonomous_dialogue": {
+    "dialogue": "添柴火焰升高了，水汽冒了起来",
+    "model": "llama3.1:8b",
+    "ok": true
+  },
+  "compatible": {
+    "dialogue": "进来吧，屋子里暖和，你就坐着休息吧。",
+    "ok": true
+  },
+  "connection": {
+    "dialogue": "当然可以，雨天最好进来避雨，喝杯热酒暖暖身子。",
+    "ok": true
+  },
+  "free_dialogue": {
+    "dialogue": "你也在担心这条街的前途吗？",
+    "model": "llama3.1:8b",
+    "ok": true
+  },
+  "generation": {
+    "dialogue": "信没丢。是我没有照她说的做。她让我烧掉，我……一直没有动那个铁盒。",
+    "model": "llama3.1:8b",
+    "ok": true
+  },
+  "model": "llama3.1:8b",
+  "spontaneous_dialogue": {
+    "dialogue": "这木屑要再拢进去，还是先倒掉",
+    "model": "llama3.1:8b",
+    "ok": true
+  },
+  "state_unchanged": true,
+  "story_fact_preserved": true
+}

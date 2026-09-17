@@ -1,0 +1,152 @@
+{
+  "subjects": [
+    {
+      "id": "miso",
+      "name": "米酥",
+      "species": "cat",
+      "color": "df9b58",
+      "size": 1.0,
+      "cohort": "母体"
+    },
+    {
+      "id": "bao",
+      "name": "阿包",
+      "species": "dog",
+      "color": "b78966",
+      "size": 1.25,
+      "cohort": "母体"
+    },
+    {
+      "id": "pip",
+      "name": "芝麻",
+      "species": "mouse",
+      "color": "a9a0a1",
+      "size": 0.6,
+      "cohort": "母体"
+    },
+    {
+      "id": "seed_a",
+      "name": "小芽",
+      "species": "cat",
+      "color": "df9b58",
+      "size": 0.65,
+      "cohort": "幼体"
+    },
+    {
+      "id": "seed_b",
+      "name": "小团",
+      "species": "dog",
+      "color": "b78966",
+      "size": 0.8125,
+      "cohort": "幼体"
+    },
+    {
+      "id": "seed_c",
+      "name": "小点",
+      "species": "mouse",
+      "color": "a9a0a1",
+      "size": 0.39,
+      "cohort": "幼体"
+    }
+  ],
+  "objects": [
+    {
+      "id": "cat_food",
+      "label": "猫粮",
+      "kind": "food",
+      "species": [
+        "cat"
+      ]
+    },
+    {
+      "id": "dog_food",
+      "label": "狗粮",
+      "kind": "food",
+      "species": [
+        "dog"
+      ]
+    },
+    {
+      "id": "mouse_food",
+      "label": "谷物",
+      "kind": "food",
+      "species": [
+        "mouse"
+      ]
+    },
+    {
+      "id": "water",
+      "label": "饮水盆",
+      "kind": "water",
+      "species": [
+        "cat",
+        "dog",
+        "mouse"
+      ]
+    },
+    {
+      "id": "cat_bed",
+      "label": "猫窝",
+      "kind": "bed",
+      "species": [
+        "cat"
+      ]
+    },
+    {
+      "id": "dog_bed",
+      "label": "软垫",
+      "kind": "bed",
+      "species": [
+        "dog"
+      ]
+    },
+    {
+      "id": "mouse_house",
+      "label": "鼠屋 · 安全区",
+      "kind": "shelter",
+      "species": [
+        "mouse"
+      ]
+    },
+    {
+      "id": "ball",
+      "label": "绒球",
+      "kind": "toy",
+      "species": [
+        "cat",
+        "dog",
+        "mouse"
+      ]
+    },
+    {
+      "id": "door",
+      "label": "阳台门",
+      "kind": "door",
+      "species": [
+        "cat",
+        "dog",
+        "mouse"
+      ]
+    },
+    {
+      "id": "window",
+      "label": "窗边",
+      "kind": "view",
+      "species": [
+        "cat",
+        "dog",
+        "mouse"
+      ]
+    },
+    {
+      "id": "screen",
+      "label": "矮屏风 · 遮蔽",
+      "kind": "cover",
+      "species": [
+        "cat",
+        "dog",
+        "mouse"
+      ]
+    }
+  ]
+}
