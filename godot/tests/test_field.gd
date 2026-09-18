@@ -11,7 +11,7 @@ func _initialize() -> void:
  var lab=Experiment.new()
  var world=lab.simulation
  check(world.bodies.size()==1 and world.parameters[0].associations.is_empty() and world.bodies[0].memory.is_empty(),"one body has no initial environmental associations")
- check(world.parameters[0].motor.all(func(v):return v==0),"no preset receptor to environmental approach mapping")
+ check(not world.parameters[0].has("motor"),"no direct receptor to environmental approach mapping")
  lab.set_stage(0)
  check(world.sense(0).filter(func(sample):return sample.origin==0).is_empty(),"empty room contains no external sensory objects")
  lab.set_stage(2)

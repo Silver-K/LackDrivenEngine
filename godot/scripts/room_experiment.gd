@@ -76,10 +76,10 @@ func reset() -> void:
  log_event("初始状态重置 · 环境开关保留")
 
 func snapshot() -> Dictionary:
- return {"format":"tension-room","version":8,"room":simulation.room,"bodies":simulation.bodies.duplicate(true),"surfaces":simulation.surfaces.duplicate(true),"parameters":simulation.parameters.duplicate(true),"time":simulation.time,"stage":stage,"apparatus_time":apparatus_time,"cue_only":cue_only,"exchange_enabled":exchange_enabled,"relocated":relocated,"moving_source":moving_source,"combination_training":combination_training,"samples":samples.duplicate(true),"path":path.duplicate(),"events":events.duplicate(),"sample_clock":sample_clock,"previous_touch":previous_touch}
+ return {"format":"tension-room","version":9,"room":simulation.room,"bodies":simulation.bodies.duplicate(true),"surfaces":simulation.surfaces.duplicate(true),"parameters":simulation.parameters.duplicate(true),"time":simulation.time,"stage":stage,"apparatus_time":apparatus_time,"cue_only":cue_only,"exchange_enabled":exchange_enabled,"relocated":relocated,"moving_source":moving_source,"combination_training":combination_training,"samples":samples.duplicate(true),"path":path.duplicate(),"events":events.duplicate(),"sample_clock":sample_clock,"previous_touch":previous_touch}
 
 func restore(data: Dictionary) -> bool:
- if data.get("format","")!="tension-room" or data.get("version",0)!=8: return false
+ if data.get("format","")!="tension-room" or data.get("version",0)!=9: return false
  for key in ["room","bodies","surfaces","parameters","time","stage","apparatus_time","cue_only","exchange_enabled","relocated","moving_source","combination_training","samples","path","events","sample_clock","previous_touch"]:
   if not data.has(key): return false
  if data.bodies.size()!=1 or data.parameters.size()!=1 or data.surfaces.size()!=6: return false

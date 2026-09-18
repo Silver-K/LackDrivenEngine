@@ -28,7 +28,7 @@ func describe(body: Dictionary) -> String:
  var torque=0.0
  text+="
 独立贡献（未合并，零值省略）
-来源：0几何 / 1关联 / 2感受连接 / 3新异 / 4推进 / 5转向 / 6波动
+来源：1关联逐维作用 / 4张力逐维推进 / 5张力变化逐维转向
 "
  for c in body.contributions:
   if c.channel==0: net+=c.value

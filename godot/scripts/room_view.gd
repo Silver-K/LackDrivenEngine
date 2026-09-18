@@ -3,9 +3,11 @@ extends Control
 const Experiment = preload("res://scripts/room_experiment.gd")
 const Probe=preload("res://scripts/experiment_probe.gd")
 const Observation=preload("res://scripts/causal_observation.gd")
+const Comparison=preload("res://scripts/experience_comparison.gd")
 var experiment = Experiment.new()
 var probe=Probe.new()
 var observer=Observation.new()
+var comparison=Comparison.new()
 var details=RichTextLabel.new()
 var detail_mode=""
 var resume_after_details=false
@@ -24,7 +26,11 @@ const GREEN = Color("80dfba")
 const BLUE = Color("82baf5")
 const ORANGE = Color("eab789")
 const COLORS = [Color("80dfba"),Color("82baf5"),Color("d5a2d8"),Color("eab789")]
-const SAVE_PATH = "user://room-history-v8.bin"
+const SAVE_PATH = "user://room-history-v9.bin"
+const COMPARISON_PATH = "user://experience-comparison-v1.bin"
+const COMPARISON_REPORT = "user://experience-comparison-report.txt"
+var comparison_path=COMPARISON_PATH
+var comparison_report=COMPARISON_REPORT
 
 func _ready() -> void:
  details.add_theme_font_override("normal_font",font)
@@ -34,6 +40,9 @@ func _ready() -> void:
  add_child(details)
  probe.capture(experiment)
  font.font_names = PackedStringArray(["Microsoft YaHei UI","Microsoft YaHei"])
+ if "--experience-smoke" in OS.get_cmdline_user_args():
+  comparison.load_file("res://../artifacts/experience-comparison/branches.bin")
+  open_details("experience")
  if "--lab-smoke" in OS.get_cmdline_user_args() or "--probe-smoke" in OS.get_cmdline_user_args():
   experiment.set_stage(3)
   for i in range(1200): experiment.step(1.0/60.0)
@@ -43,24 +52,54 @@ func _ready() -> void:
 
 func _process(dt: float) -> void:
  frames += 1
+ if detail_mode=="experience" and comparison.running:
+  var started=Time.get_ticks_usec()
+  var ticks=0
+  while comparison.running and ticks<60 and Time.get_ticks_usec()-started<6000:
+   comparison.advance(1)
+   ticks+=1
+  if frames%15==0 or not comparison.running: refresh_details(false)
  if not paused:
   accumulator += minf(dt,0.1)*speed
   while accumulator>=1.0/60.0:
    experiment.step(1.0/60.0)
    accumulator-=1.0/60.0
  queue_redraw()
+ if frames==4 and "--experience-smoke" in OS.get_cmdline_user_args():
+  await RenderingServer.frame_post_draw
+  get_viewport().get_texture().get_image().save_png(ProjectSettings.globalize_path("res://../artifacts/experience-comparison/ui.png"))
+  get_tree().quit()
  if frames==4 and ("--lab-smoke" in OS.get_cmdline_user_args() or "--probe-smoke" in OS.get_cmdline_user_args()):
   await RenderingServer.frame_post_draw
   get_viewport().get_texture().get_image().save_png(ProjectSettings.globalize_path("res://../artifacts/probe-room.png" if "--probe-smoke" in OS.get_cmdline_user_args() else "res://../artifacts/minimal-room.png"))
   get_tree().quit()
 
 func handle_action(action: String) -> void:
- if not detail_mode.is_empty() and not (action=="close_details" or action.begins_with("case")): return
+ if not detail_mode.is_empty():
+  var allowed=action=="close_details" or (detail_mode=="probe" and action.begins_with("case")) or (detail_mode=="experience" and action.begins_with("experience_"))
+  if not allowed: return
  if action=="close_details":
+  if detail_mode=="experience": comparison.running=false
   detail_mode=""
   details.visible=false
   paused=not resume_after_details
  elif action=="inspect": open_details("inspect")
+ elif action=="experience": open_details("experience")
+ elif action=="experience_start":
+  comparison.begin()
+  refresh_details()
+ elif action=="experience_pause":
+  if not comparison.branches.is_empty() and not comparison.completed and comparison.error.is_empty(): comparison.running=not comparison.running
+  refresh_details(false)
+ elif action=="experience_save":
+  status="已保存全部经历分支、阶段记录和运行进度。" if comparison.save_file(comparison_path) else "经历对照保存失败；请先开始实验。"
+ elif action=="experience_load":
+  var loaded=comparison.load_file(comparison_path)
+  if loaded: comparison.running=false
+  status="已读取经历分支，点击继续可接着运行。" if loaded else "未找到兼容的经历对照存档。"
+  refresh_details()
+ elif action=="experience_export":
+  status="已导出结论："+ProjectSettings.globalize_path(comparison_report) if comparison.export_report(comparison_report) else "结论导出失败。"
  elif action=="checkpoint":
   probe.capture(experiment)
   status="已记录训练前参考状态；随后让主体经历环境，再运行冻结探测。"
@@ -114,11 +153,14 @@ func open_details(mode: String) -> void:
  detail_mode=mode
  details.visible=true
  refresh_details()
-func refresh_details() -> void:
+func refresh_details(reset_scroll: bool = true) -> void:
+ var scroll=details.get_v_scroll_bar().value
  if detail_mode=="inspect": details.text=observer.describe(experiment.simulation.observe(0))
  elif detail_mode=="probe":
   details.text=probe.summary()+"\n当前记忆 · "+probe.results[selected_probe].name+" · 首步因果记录\n\n"+observer.describe(probe.results[selected_probe].pair[1].first)+"\n参考记忆 · 首步因果记录\n\n"+observer.describe(probe.results[selected_probe].pair[0].first)
- details.scroll_to_line(0)
+ elif detail_mode=="experience": details.text=comparison.summary()
+ if reset_scroll: details.scroll_to_line(0)
+ else: details.get_v_scroll_bar().value=scroll
 
 func _gui_input(event: InputEvent) -> void:
  if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
@@ -172,6 +214,7 @@ func _draw() -> void:
  button_at("checkpoint","记录训练前",Rect2(675,35,150,36))
  button_at("probe","冻结探测",Rect2(840,35,150,36))
  button_at("train_pair","组合训练 P+Q",Rect2(510,82,190,36),experiment.combination_training)
+ button_at("experience","经历对照",Rect2(715,82,160,36))
  var sim = experiment.simulation
  label_at("%07.1f s   /   %s   /   %d×" % [sim.time,"暂停" if paused else "运行中",speed],Vector2(1110,80),17,GREEN)
  var stages=["01  空房间","02  加入交换 A","03  线索 → 扰动","04  B 与遮蔽"]
@@ -190,6 +233,10 @@ func _draw() -> void:
   button_at("close_details","返回现场",Rect2(900,228,145,36))
   if detail_mode=="probe":
    for i in range(4): button_at("case%d" % i,["P","Q","P+Q","R+Q"][i],Rect2(60+i*160,228,145,36),selected_probe==i)
+  elif detail_mode=="experience":
+   var actions_comparison=["experience_start","experience_pause","experience_save","experience_load","experience_export"]
+   var names_comparison=["开始实验" if comparison.branches.is_empty() else "重新实验","实验完成" if comparison.completed else ("暂停实验" if comparison.running else "继续实验"),"保存分支","读取分支","导出结论"]
+   for i in range(actions_comparison.size()): button_at(actions_comparison[i],names_comparison[i],Rect2(60+i*164,228,150,36))
   else: label_at("只读快照 · 滚动查看完整因果链",Vector2(62,252),18,GREEN)
   details.position=Vector2(60,280)*canvas_scale()
   details.size=Vector2(985,495)*canvas_scale()
@@ -253,7 +300,7 @@ func draw_room() -> void:
  draw_polyline(outline,Color("c7ffe6"),1.5,true)
  draw_circle(body.position+Vector2(9,0).rotated(heading),3,Color("204d47"))
  label_at("01",body.position+Vector2(-9,-28),13,GREEN)
- label_at("角速度 %+.3f   接触冲量 %.3f   运动波动 %+.3f   执行幅度 %.3f" % [body.angular_velocity,body.contact_pressure,body.motor_state.fluctuation,body.activation],Vector2(62,638),11,MUTED)
+ label_at("角速度 %+.3f   接触冲量 %.3f   执行幅度 %.3f" % [body.angular_velocity,body.contact_pressure,body.activation],Vector2(62,638),11,MUTED)
 
 func draw_observation() -> void:
  panel(Rect2(1090,134,310,664))

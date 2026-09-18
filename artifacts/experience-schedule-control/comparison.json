@@ -1,0 +1,978 @@
+{
+  "failures": [],
+  "reference": [
+    {
+      "branch": "paired",
+      "phases": [
+        {
+          "force": "(-0.058279, 0.0)",
+          "force_magnitude": 0.0582790151238441,
+          "memory_distance_from_reference": 0.0,
+          "phase": 0,
+          "probe_displacement": "(47.70691, 0.083038)",
+          "stats": {
+            "contact_impulse": 4.60816746259419,
+            "load_integral": 45.6497349667179,
+            "low_seconds": 126.133333333327,
+            "mechanical_dose": 5.54769270638136,
+            "path_length": 2831.7955774033,
+            "seconds": 240.000000000083,
+            "signal_dose": 4.80962103632558,
+            "strain_integral": 122.176648505378
+          },
+          "time": 240.000000000083
+        },
+        {
+          "force": "(-0.03939, 0.0)",
+          "force_magnitude": 0.0393902659416199,
+          "memory_distance_from_reference": 0.0,
+          "phase": 1,
+          "probe_displacement": "(50.9227, 0.069275)",
+          "stats": {
+            "contact_impulse": 2.39172718260023,
+            "load_integral": 21.273930730586,
+            "low_seconds": 60.5333333333312,
+            "mechanical_dose": 1.58315661288524,
+            "path_length": 1316.61244334006,
+            "seconds": 119.999999999994,
+            "signal_dose": 1.9349243490498,
+            "strain_integral": 57.808534666872
+          },
+          "time": 360.000000000001
+        },
+        {
+          "force": "(-0.007471, 0.0)",
+          "force_magnitude": 0.00747072976082563,
+          "memory_distance_from_reference": 0.0,
+          "phase": 2,
+          "probe_displacement": "(56.526, 0.04599)",
+          "stats": {
+            "contact_impulse": 1.29753157827589,
+            "load_integral": 40.6088688045403,
+            "low_seconds": 152.000000000013,
+            "mechanical_dose": 0.0,
+            "path_length": 2171.4559306737,
+            "seconds": 240.000000000083,
+            "signal_dose": 7.77698970391184,
+            "strain_integral": 112.012716578408
+          },
+          "time": 599.999999999783
+        },
+        {
+          "force": "(-0.049249, 0.0)",
+          "force_magnitude": 0.049248781055212,
+          "memory_distance_from_reference": 0.0,
+          "phase": 3,
+          "probe_displacement": "(49.23117, 0.076477)",
+          "stats": {
+            "contact_impulse": 2.43317655955131,
+            "load_integral": 20.4579655652186,
+            "low_seconds": 68.966666666664,
+            "mechanical_dose": 1.33640740965356,
+            "path_length": 1174.72438004264,
+            "seconds": 119.999999999994,
+            "signal_dose": 1.70913102659117,
+            "strain_integral": 57.3675150448227
+          },
+          "time": 719.999999999674
+        }
+      ]
+    },
+    {
+      "branch": "delayed",
+      "phases": [
+        {
+          "force": "(-0.021399, 0.0)",
+          "force_magnitude": 0.0213990081101656,
+          "memory_distance_from_reference": 0.0,
+          "phase": 0,
+          "probe_displacement": "(54.03406, 0.056152)",
+          "stats": {
+            "contact_impulse": 3.73400433858236,
+            "load_integral": 46.3927424974286,
+            "low_seconds": 123.316666666661,
+            "mechanical_dose": 10.0095747329987,
+            "path_length": 3078.76247738294,
+            "seconds": 240.000000000083,
+            "signal_dose": 6.14832399463104,
+            "strain_integral": 124.389304801586
+          },
+          "time": 240.000000000083
+        },
+        {
+          "force": "(-0.051953, 0.0)",
+          "force_magnitude": 0.0519528985023499,
+          "memory_distance_from_reference": 0.0,
+          "phase": 1,
+          "probe_displacement": "(48.76968, 0.078552)",
+          "stats": {
+            "contact_impulse": 2.24655024210612,
+            "load_integral": 22.280845691864,
+            "low_seconds": 65.4666666666642,
+            "mechanical_dose": 3.9462295903976,
+            "path_length": 1385.77006269538,
+            "seconds": 119.999999999994,
+            "signal_dose": 3.08304592992889,
+            "strain_integral": 60.2234559404393
+          },
+          "time": 360.000000000001
+        },
+        {
+          "force": "(-0.006378, 0.0)",
+          "force_magnitude": 0.00637826835736632,
+          "memory_distance_from_reference": 0.0,
+          "phase": 2,
+          "probe_displacement": "(56.71579, 0.045227)",
+          "stats": {
+            "contact_impulse": 1.94710066583421,
+            "load_integral": 41.1407414142323,
+            "low_seconds": 147.983333333343,
+            "mechanical_dose": 0.0,
+            "path_length": 2154.14458426911,
+            "seconds": 240.000000000083,
+            "signal_dose": 7.44283133896747,
+            "strain_integral": 112.485057299903
+          },
+          "time": 599.999999999783
+        },
+        {
+          "force": "(-0.087378, 0.0)",
+          "force_magnitude": 0.087378241121769,
+          "memory_distance_from_reference": 0.0,
+          "phase": 3,
+          "probe_displacement": "(42.88303, 0.104614)",
+          "stats": {
+            "contact_impulse": 3.02703442233097,
+            "load_integral": 21.4634806538648,
+            "low_seconds": 66.1666666666642,
+            "mechanical_dose": 4.075898256073,
+            "path_length": 1448.2789109052,
+            "seconds": 119.999999999994,
+            "signal_dose": 3.48052329558943,
+            "strain_integral": 58.2774255412307
+          },
+          "time": 719.999999999674
+        }
+      ]
+    },
+    {
+      "branch": "cue_only",
+      "phases": [
+        {
+          "force": "(-0.006735, 0.0)",
+          "force_magnitude": 0.00673452252522111,
+          "memory_distance_from_reference": 0.0,
+          "phase": 0,
+          "probe_displacement": "(56.65619, 0.04541)",
+          "stats": {
+            "contact_impulse": 0.834294557571411,
+            "load_integral": 43.26474772454,
+            "low_seconds": 143.93333333334,
+            "mechanical_dose": 0.0,
+            "path_length": 2557.63520731608,
+            "seconds": 240.000000000083,
+            "signal_dose": 9.61517029489884,
+            "strain_integral": 119.598873925638
+          },
+          "time": 240.000000000083
+        },
+        {
+          "force": "(-0.040656, 0.0)",
+          "force_magnitude": 0.0406562462449074,
+          "memory_distance_from_reference": 0.0,
+          "phase": 1,
+          "probe_displacement": "(50.70505, 0.070068)",
+          "stats": {
+            "contact_impulse": 1.84675011369917,
+            "load_integral": 21.1046882019697,
+            "low_seconds": 62.8999999999977,
+            "mechanical_dose": 3.46360013507185,
+            "path_length": 1391.88892242,
+            "seconds": 119.999999999994,
+            "signal_dose": 2.77907050197217,
+            "strain_integral": 57.0080172864436
+          },
+          "time": 360.000000000001
+        },
+        {
+          "force": "(-0.006858, 0.0)",
+          "force_magnitude": 0.00685778958722949,
+          "memory_distance_from_reference": 0.0,
+          "phase": 2,
+          "probe_displacement": "(56.63464, 0.045471)",
+          "stats": {
+            "contact_impulse": 0.934653255674574,
+            "load_integral": 40.3688535663855,
+            "low_seconds": 155.950000000016,
+            "mechanical_dose": 0.0,
+            "path_length": 2106.89698461632,
+            "seconds": 240.000000000083,
+            "signal_dose": 8.12725142083929,
+            "strain_integral": 112.655483900138
+          },
+          "time": 599.999999999783
+        },
+        {
+          "force": "(-0.096684, 0.0)",
+          "force_magnitude": 0.0966844111680985,
+          "memory_distance_from_reference": 0.0,
+          "phase": 3,
+          "probe_displacement": "(41.38068, 0.111511)",
+          "stats": {
+            "contact_impulse": 4.1731495940023,
+            "load_integral": 21.8344120764581,
+            "low_seconds": 66.7999999999975,
+            "mechanical_dose": 4.5062865364803,
+            "path_length": 1352.72867394854,
+            "seconds": 119.999999999994,
+            "signal_dose": 3.32515302254839,
+            "strain_integral": 58.1243990097706
+          },
+          "time": 719.999999999674
+        }
+      ]
+    }
+  ],
+  "reference_probes_recomputed": 12,
+  "reference_sources_verified": true,
+  "reference_ticks": [
+    14400,
+    7200,
+    14400,
+    7200
+  ],
+  "variants": [
+    {
+      "fork_after": 0,
+      "id": "early_withdrawal",
+      "matching_prefix_samples": 864,
+      "rows": [
+        {
+          "branch": "paired",
+          "phases": [
+            {
+              "force": "(-0.058279, 0.0)",
+              "force_magnitude": 0.0582790151238441,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(47.70691, 0.083038)",
+              "stats": {
+                "contact_impulse": 4.60816746259419,
+                "load_integral": 45.6497349667179,
+                "low_seconds": 126.133333333327,
+                "mechanical_dose": 5.54769270638136,
+                "path_length": 2831.7955774033,
+                "seconds": 240.000000000083,
+                "signal_dose": 4.80962103632558,
+                "strain_integral": 122.176648505378
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.03734, 0.0)",
+              "force_magnitude": 0.0373402610421181,
+              "memory_distance_from_reference": 0.00166931349354574,
+              "phase": 1,
+              "probe_displacement": "(51.28384, 0.067749)",
+              "stats": {
+                "contact_impulse": 1.13965381516351,
+                "load_integral": 8.56277513354077,
+                "low_seconds": 19.7666666666668,
+                "mechanical_dose": 0.622347465588541,
+                "path_length": 640.11810117077,
+                "seconds": 47.9999999999986,
+                "signal_dose": 0.74190496960616,
+                "strain_integral": 22.4058217657533
+              },
+              "time": 288.000000000067
+            },
+            {
+              "force": "(-0.02026, 0.0)",
+              "force_magnitude": 0.0202599689364433,
+              "memory_distance_from_reference": 0.00654312405106559,
+              "phase": 2,
+              "probe_displacement": "(54.24643, 0.055389)",
+              "stats": {
+                "contact_impulse": 1.35140977965461,
+                "load_integral": 40.6063436144261,
+                "low_seconds": 152.56666666668,
+                "mechanical_dose": 0.0,
+                "path_length": 2087.50253481277,
+                "seconds": 240.000000000083,
+                "signal_dose": 7.11006587752655,
+                "strain_integral": 113.686407738167
+              },
+              "time": 527.999999999848
+            },
+            {
+              "force": "(-0.032228, 0.0)",
+              "force_magnitude": 0.0322275869548321,
+              "memory_distance_from_reference": 0.0122668375507842,
+              "phase": 3,
+              "probe_displacement": "(52.16949, 0.064026)",
+              "stats": {
+                "contact_impulse": 2.15276973777347,
+                "load_integral": 20.4531036699565,
+                "low_seconds": 62.7999999999977,
+                "mechanical_dose": 1.28547697398856,
+                "path_length": 1267.19527131172,
+                "seconds": 119.999999999994,
+                "signal_dose": 1.62006899559875,
+                "strain_integral": 56.2526760529905
+              },
+              "time": 647.999999999739
+            }
+          ]
+        },
+        {
+          "branch": "delayed",
+          "phases": [
+            {
+              "force": "(-0.021399, 0.0)",
+              "force_magnitude": 0.0213990081101656,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(54.03406, 0.056152)",
+              "stats": {
+                "contact_impulse": 3.73400433858236,
+                "load_integral": 46.3927424974286,
+                "low_seconds": 123.316666666661,
+                "mechanical_dose": 10.0095747329987,
+                "path_length": 3078.76247738294,
+                "seconds": 240.000000000083,
+                "signal_dose": 6.14832399463104,
+                "strain_integral": 124.389304801586
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.05567, 0.0)",
+              "force_magnitude": 0.0556700974702835,
+              "memory_distance_from_reference": 0.00481091152447931,
+              "phase": 1,
+              "probe_displacement": "(48.13916, 0.081207)",
+              "stats": {
+                "contact_impulse": 1.21954215897454,
+                "load_integral": 9.03853034412792,
+                "low_seconds": 18.8500000000002,
+                "mechanical_dose": 2.11573085874128,
+                "path_length": 757.427148580115,
+                "seconds": 47.9999999999986,
+                "signal_dose": 1.53663327271927,
+                "strain_integral": 23.4717050948954
+              },
+              "time": 288.000000000067
+            },
+            {
+              "force": "(-0.005902, 0.0)",
+              "force_magnitude": 0.00590234808623791,
+              "memory_distance_from_reference": 0.00130215356036078,
+              "phase": 2,
+              "probe_displacement": "(56.79828, 0.04483)",
+              "stats": {
+                "contact_impulse": 0.988075282838609,
+                "load_integral": 41.0993636235894,
+                "low_seconds": 153.900000000015,
+                "mechanical_dose": 0.0,
+                "path_length": 2136.90580369515,
+                "seconds": 240.000000000083,
+                "signal_dose": 7.36018309628538,
+                "strain_integral": 114.752152569031
+              },
+              "time": 527.999999999848
+            },
+            {
+              "force": "(-0.067201, 0.0)",
+              "force_magnitude": 0.0672012567520142,
+              "memory_distance_from_reference": 0.0089547143300206,
+              "phase": 3,
+              "probe_displacement": "(46.18594, 0.089874)",
+              "stats": {
+                "contact_impulse": 2.52880989180671,
+                "load_integral": 21.0560462551151,
+                "low_seconds": 67.9333333333308,
+                "mechanical_dose": 3.17917109324753,
+                "path_length": 1284.49732851042,
+                "seconds": 119.999999999994,
+                "signal_dose": 2.86410847181844,
+                "strain_integral": 57.8427518219137
+              },
+              "time": 647.999999999739
+            }
+          ]
+        },
+        {
+          "branch": "cue_only",
+          "phases": [
+            {
+              "force": "(-0.006735, 0.0)",
+              "force_magnitude": 0.00673452252522111,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(56.65619, 0.04541)",
+              "stats": {
+                "contact_impulse": 0.834294557571411,
+                "load_integral": 43.26474772454,
+                "low_seconds": 143.93333333334,
+                "mechanical_dose": 0.0,
+                "path_length": 2557.63520731608,
+                "seconds": 240.000000000083,
+                "signal_dose": 9.61517029489884,
+                "strain_integral": 119.598873925638
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.055926, 0.0)",
+              "force_magnitude": 0.0559257976710796,
+              "memory_distance_from_reference": 0.00816059480980575,
+              "phase": 1,
+              "probe_displacement": "(48.09357, 0.08139)",
+              "stats": {
+                "contact_impulse": 0.775453514522976,
+                "load_integral": 8.35746909790225,
+                "low_seconds": 21.9666666666667,
+                "mechanical_dose": 2.32141474122856,
+                "path_length": 668.390048355985,
+                "seconds": 47.9999999999986,
+                "signal_dose": 1.64149441176846,
+                "strain_integral": 20.9935392171194
+              },
+              "time": 288.000000000067
+            },
+            {
+              "force": "(-0.005947, 0.0)",
+              "force_magnitude": 0.00594679033383727,
+              "memory_distance_from_reference": 0.00415886708880935,
+              "phase": 2,
+              "probe_displacement": "(56.78549, 0.04483)",
+              "stats": {
+                "contact_impulse": 1.95948318640391,
+                "load_integral": 40.8723169589452,
+                "low_seconds": 146.100000000008,
+                "mechanical_dose": 0.0,
+                "path_length": 2245.62060229815,
+                "seconds": 240.000000000083,
+                "signal_dose": 8.06372592486939,
+                "strain_integral": 112.919316547063
+              },
+              "time": 527.999999999848
+            },
+            {
+              "force": "(-0.101797, 0.0)",
+              "force_magnitude": 0.101796939969063,
+              "memory_distance_from_reference": 0.00630056822032893,
+              "phase": 3,
+              "probe_displacement": "(40.5589, 0.115479)",
+              "stats": {
+                "contact_impulse": 5.67662500362429,
+                "load_integral": 21.8046332957118,
+                "low_seconds": 66.9499999999975,
+                "mechanical_dose": 4.1317342777271,
+                "path_length": 1309.78841346034,
+                "seconds": 119.999999999994,
+                "signal_dose": 3.02317428047529,
+                "strain_integral": 57.4346322133483
+              },
+              "time": 647.999999999739
+            }
+          ]
+        }
+      ],
+      "ticks": [
+        14400,
+        2880,
+        14400,
+        7200
+      ]
+    },
+    {
+      "fork_after": 1,
+      "id": "long_withdrawal",
+      "matching_prefix_samples": 1800,
+      "rows": [
+        {
+          "branch": "paired",
+          "phases": [
+            {
+              "force": "(-0.058279, 0.0)",
+              "force_magnitude": 0.0582790151238441,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(47.70691, 0.083038)",
+              "stats": {
+                "contact_impulse": 4.60816746259419,
+                "load_integral": 45.6497349667179,
+                "low_seconds": 126.133333333327,
+                "mechanical_dose": 5.54769270638136,
+                "path_length": 2831.7955774033,
+                "seconds": 240.000000000083,
+                "signal_dose": 4.80962103632558,
+                "strain_integral": 122.176648505378
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.03939, 0.0)",
+              "force_magnitude": 0.0393902659416199,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(50.9227, 0.069275)",
+              "stats": {
+                "contact_impulse": 2.39172718260023,
+                "load_integral": 21.273930730586,
+                "low_seconds": 60.5333333333312,
+                "mechanical_dose": 1.58315661288524,
+                "path_length": 1316.61244334006,
+                "seconds": 119.999999999994,
+                "signal_dose": 1.9349243490498,
+                "strain_integral": 57.808534666872
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.007234, 0.0)",
+              "force_magnitude": 0.00723425531759858,
+              "memory_distance_from_reference": 0.000708778556938082,
+              "phase": 2,
+              "probe_displacement": "(56.56931, 0.045898)",
+              "stats": {
+                "contact_impulse": 3.35886324776544,
+                "load_integral": 80.7108580027368,
+                "low_seconds": 297.700000000058,
+                "mechanical_dose": 0.0,
+                "path_length": 4474.73916841247,
+                "seconds": 479.999999999892,
+                "signal_dose": 15.4287034797361,
+                "strain_integral": 223.900935028834
+              },
+              "time": 839.999999999565
+            },
+            {
+              "force": "(-0.036, 0.0)",
+              "force_magnitude": 0.0359995551407337,
+              "memory_distance_from_reference": 0.00635580544960227,
+              "phase": 3,
+              "probe_displacement": "(51.5054, 0.06665)",
+              "stats": {
+                "contact_impulse": 1.67463184727563,
+                "load_integral": 20.1936019480169,
+                "low_seconds": 69.6999999999973,
+                "mechanical_dose": 1.36921175872142,
+                "path_length": 1024.06750669056,
+                "seconds": 119.999999999994,
+                "signal_dose": 1.7395074438921,
+                "strain_integral": 54.7533536705751
+              },
+              "time": 959.999999999456
+            }
+          ]
+        },
+        {
+          "branch": "delayed",
+          "phases": [
+            {
+              "force": "(-0.021399, 0.0)",
+              "force_magnitude": 0.0213990081101656,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(54.03406, 0.056152)",
+              "stats": {
+                "contact_impulse": 3.73400433858236,
+                "load_integral": 46.3927424974286,
+                "low_seconds": 123.316666666661,
+                "mechanical_dose": 10.0095747329987,
+                "path_length": 3078.76247738294,
+                "seconds": 240.000000000083,
+                "signal_dose": 6.14832399463104,
+                "strain_integral": 124.389304801586
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.051953, 0.0)",
+              "force_magnitude": 0.0519528985023499,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(48.76968, 0.078552)",
+              "stats": {
+                "contact_impulse": 2.24655024210612,
+                "load_integral": 22.280845691864,
+                "low_seconds": 65.4666666666642,
+                "mechanical_dose": 3.9462295903976,
+                "path_length": 1385.77006269538,
+                "seconds": 119.999999999994,
+                "signal_dose": 3.08304592992889,
+                "strain_integral": 60.2234559404393
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.005976, 0.0)",
+              "force_magnitude": 0.00597622012719512,
+              "memory_distance_from_reference": 0.00161523169789702,
+              "phase": 2,
+              "probe_displacement": "(56.78546, 0.04483)",
+              "stats": {
+                "contact_impulse": 3.37959376970927,
+                "load_integral": 81.2869876185259,
+                "low_seconds": 292.933333333396,
+                "mechanical_dose": 0.0,
+                "path_length": 4536.58007549389,
+                "seconds": 479.999999999892,
+                "signal_dose": 16.2274114458088,
+                "strain_integral": 224.655946996034
+              },
+              "time": 839.999999999565
+            },
+            {
+              "force": "(-0.045442, 0.0)",
+              "force_magnitude": 0.0454415306448936,
+              "memory_distance_from_reference": 0.0210122056574666,
+              "phase": 3,
+              "probe_displacement": "(49.8746, 0.073761)",
+              "stats": {
+                "contact_impulse": 2.92981088658174,
+                "load_integral": 20.8505171752545,
+                "low_seconds": 70.6166666666639,
+                "mechanical_dose": 2.99830720888856,
+                "path_length": 1208.54804456432,
+                "seconds": 119.999999999994,
+                "signal_dose": 2.62601092283978,
+                "strain_integral": 55.7369725257228
+              },
+              "time": 959.999999999456
+            }
+          ]
+        },
+        {
+          "branch": "cue_only",
+          "phases": [
+            {
+              "force": "(-0.006735, 0.0)",
+              "force_magnitude": 0.00673452252522111,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(56.65619, 0.04541)",
+              "stats": {
+                "contact_impulse": 0.834294557571411,
+                "load_integral": 43.26474772454,
+                "low_seconds": 143.93333333334,
+                "mechanical_dose": 0.0,
+                "path_length": 2557.63520731608,
+                "seconds": 240.000000000083,
+                "signal_dose": 9.61517029489884,
+                "strain_integral": 119.598873925638
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.040656, 0.0)",
+              "force_magnitude": 0.0406562462449074,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(50.70505, 0.070068)",
+              "stats": {
+                "contact_impulse": 1.84675011369917,
+                "load_integral": 21.1046882019697,
+                "low_seconds": 62.8999999999977,
+                "mechanical_dose": 3.46360013507185,
+                "path_length": 1391.88892242,
+                "seconds": 119.999999999994,
+                "signal_dose": 2.77907050197217,
+                "strain_integral": 57.0080172864436
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.006031, 0.0)",
+              "force_magnitude": 0.00603102194145322,
+              "memory_distance_from_reference": 0.000944336498248773,
+              "phase": 2,
+              "probe_displacement": "(56.77463, 0.044861)",
+              "stats": {
+                "contact_impulse": 2.40579134888119,
+                "load_integral": 80.1162580583946,
+                "low_seconds": 303.583333333386,
+                "mechanical_dose": 0.0,
+                "path_length": 4334.39798775457,
+                "seconds": 479.999999999892,
+                "signal_dose": 15.4394485708246,
+                "strain_integral": 222.968626857932
+              },
+              "time": 839.999999999565
+            },
+            {
+              "force": "(-0.047315, 0.0)",
+              "force_magnitude": 0.0473145619034767,
+              "memory_distance_from_reference": 0.0257472066505667,
+              "phase": 3,
+              "probe_displacement": "(49.57001, 0.075134)",
+              "stats": {
+                "contact_impulse": 5.04527414734993,
+                "load_integral": 21.9865446537639,
+                "low_seconds": 67.5999999999975,
+                "mechanical_dose": 3.65474866024912,
+                "path_length": 1308.45168033777,
+                "seconds": 119.999999999994,
+                "signal_dose": 2.8835544932155,
+                "strain_integral": 58.718980298605
+              },
+              "time": 959.999999999456
+            }
+          ]
+        }
+      ],
+      "ticks": [
+        14400,
+        7200,
+        28800,
+        7200
+      ]
+    },
+    {
+      "fork_after": 2,
+      "id": "long_recovery",
+      "matching_prefix_samples": 2160,
+      "rows": [
+        {
+          "branch": "paired",
+          "phases": [
+            {
+              "force": "(-0.058279, 0.0)",
+              "force_magnitude": 0.0582790151238441,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(47.70691, 0.083038)",
+              "stats": {
+                "contact_impulse": 4.60816746259419,
+                "load_integral": 45.6497349667179,
+                "low_seconds": 126.133333333327,
+                "mechanical_dose": 5.54769270638136,
+                "path_length": 2831.7955774033,
+                "seconds": 240.000000000083,
+                "signal_dose": 4.80962103632558,
+                "strain_integral": 122.176648505378
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.03939, 0.0)",
+              "force_magnitude": 0.0393902659416199,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(50.9227, 0.069275)",
+              "stats": {
+                "contact_impulse": 2.39172718260023,
+                "load_integral": 21.273930730586,
+                "low_seconds": 60.5333333333312,
+                "mechanical_dose": 1.58315661288524,
+                "path_length": 1316.61244334006,
+                "seconds": 119.999999999994,
+                "signal_dose": 1.9349243490498,
+                "strain_integral": 57.808534666872
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.007471, 0.0)",
+              "force_magnitude": 0.00747072976082563,
+              "memory_distance_from_reference": 0.0,
+              "phase": 2,
+              "probe_displacement": "(56.526, 0.04599)",
+              "stats": {
+                "contact_impulse": 1.29753157827589,
+                "load_integral": 40.6088688045403,
+                "low_seconds": 152.000000000013,
+                "mechanical_dose": 0.0,
+                "path_length": 2171.4559306737,
+                "seconds": 240.000000000083,
+                "signal_dose": 7.77698970391184,
+                "strain_integral": 112.012716578408
+              },
+              "time": 599.999999999783
+            },
+            {
+              "force": "(-0.033515, 0.0)",
+              "force_magnitude": 0.0335145071148872,
+              "memory_distance_from_reference": 0.00772220289406409,
+              "phase": 3,
+              "probe_displacement": "(51.94882, 0.064819)",
+              "stats": {
+                "contact_impulse": 4.80833163598759,
+                "load_integral": 41.3909896540296,
+                "low_seconds": 132.516666666664,
+                "mechanical_dose": 2.51912452915822,
+                "path_length": 2450.19742914541,
+                "seconds": 240.000000000083,
+                "signal_dose": 3.29678768042009,
+                "strain_integral": 114.3931009342
+              },
+              "time": 839.999999999565
+            }
+          ]
+        },
+        {
+          "branch": "delayed",
+          "phases": [
+            {
+              "force": "(-0.021399, 0.0)",
+              "force_magnitude": 0.0213990081101656,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(54.03406, 0.056152)",
+              "stats": {
+                "contact_impulse": 3.73400433858236,
+                "load_integral": 46.3927424974286,
+                "low_seconds": 123.316666666661,
+                "mechanical_dose": 10.0095747329987,
+                "path_length": 3078.76247738294,
+                "seconds": 240.000000000083,
+                "signal_dose": 6.14832399463104,
+                "strain_integral": 124.389304801586
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.051953, 0.0)",
+              "force_magnitude": 0.0519528985023499,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(48.76968, 0.078552)",
+              "stats": {
+                "contact_impulse": 2.24655024210612,
+                "load_integral": 22.280845691864,
+                "low_seconds": 65.4666666666642,
+                "mechanical_dose": 3.9462295903976,
+                "path_length": 1385.77006269538,
+                "seconds": 119.999999999994,
+                "signal_dose": 3.08304592992889,
+                "strain_integral": 60.2234559404393
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.006378, 0.0)",
+              "force_magnitude": 0.00637826835736632,
+              "memory_distance_from_reference": 0.0,
+              "phase": 2,
+              "probe_displacement": "(56.71579, 0.045227)",
+              "stats": {
+                "contact_impulse": 1.94710066583421,
+                "load_integral": 41.1407414142323,
+                "low_seconds": 147.983333333343,
+                "mechanical_dose": 0.0,
+                "path_length": 2154.14458426911,
+                "seconds": 240.000000000083,
+                "signal_dose": 7.44283133896747,
+                "strain_integral": 112.485057299903
+              },
+              "time": 599.999999999783
+            },
+            {
+              "force": "(-0.114402, 0.0)",
+              "force_magnitude": 0.114401832222939,
+              "memory_distance_from_reference": 0.010856748696393,
+              "phase": 3,
+              "probe_displacement": "(38.5838, 0.124939)",
+              "stats": {
+                "contact_impulse": 10.1487138527446,
+                "load_integral": 44.8811274925953,
+                "low_seconds": 131.799999999997,
+                "mechanical_dose": 7.60815275177504,
+                "path_length": 2790.93664248959,
+                "seconds": 240.000000000083,
+                "signal_dose": 6.26891579945551,
+                "strain_integral": 119.021459866323
+              },
+              "time": 839.999999999565
+            }
+          ]
+        },
+        {
+          "branch": "cue_only",
+          "phases": [
+            {
+              "force": "(-0.006735, 0.0)",
+              "force_magnitude": 0.00673452252522111,
+              "memory_distance_from_reference": 0.0,
+              "phase": 0,
+              "probe_displacement": "(56.65619, 0.04541)",
+              "stats": {
+                "contact_impulse": 0.834294557571411,
+                "load_integral": 43.26474772454,
+                "low_seconds": 143.93333333334,
+                "mechanical_dose": 0.0,
+                "path_length": 2557.63520731608,
+                "seconds": 240.000000000083,
+                "signal_dose": 9.61517029489884,
+                "strain_integral": 119.598873925638
+              },
+              "time": 240.000000000083
+            },
+            {
+              "force": "(-0.040656, 0.0)",
+              "force_magnitude": 0.0406562462449074,
+              "memory_distance_from_reference": 0.0,
+              "phase": 1,
+              "probe_displacement": "(50.70505, 0.070068)",
+              "stats": {
+                "contact_impulse": 1.84675011369917,
+                "load_integral": 21.1046882019697,
+                "low_seconds": 62.8999999999977,
+                "mechanical_dose": 3.46360013507185,
+                "path_length": 1391.88892242,
+                "seconds": 119.999999999994,
+                "signal_dose": 2.77907050197217,
+                "strain_integral": 57.0080172864436
+              },
+              "time": 360.000000000001
+            },
+            {
+              "force": "(-0.006858, 0.0)",
+              "force_magnitude": 0.00685778958722949,
+              "memory_distance_from_reference": 0.0,
+              "phase": 2,
+              "probe_displacement": "(56.63464, 0.045471)",
+              "stats": {
+                "contact_impulse": 0.934653255674574,
+                "load_integral": 40.3688535663855,
+                "low_seconds": 155.950000000016,
+                "mechanical_dose": 0.0,
+                "path_length": 2106.89698461632,
+                "seconds": 240.000000000083,
+                "signal_dose": 8.12725142083929,
+                "strain_integral": 112.655483900138
+              },
+              "time": 599.999999999783
+            },
+            {
+              "force": "(-0.100345, 0.0)",
+              "force_magnitude": 0.100345134735107,
+              "memory_distance_from_reference": 0.00389961235597435,
+              "phase": 3,
+              "probe_displacement": "(40.79703, 0.114349)",
+              "stats": {
+                "contact_impulse": 10.1489297817979,
+                "load_integral": 45.2424525990217,
+                "low_seconds": 132.299999999997,
+                "mechanical_dose": 8.29302420554225,
+                "path_length": 2704.41431299305,
+                "seconds": 240.000000000083,
+                "signal_dose": 6.25340319351659,
+                "strain_integral": 119.162040221717
+              },
+              "time": 839.999999999565
+            }
+          ]
+        }
+      ],
+      "ticks": [
+        14400,
+        7200,
+        14400,
+        14400
+      ]
+    }
+  ]
+}

@@ -71,7 +71,6 @@ func _initialize() -> void:
 	extended.locomotion.propulsion.append(0.1)
 	extended.locomotion.turn.append(0.1)
 	extended.drift.append(0.002)
-	extended.motor.append(0.0)
 	extended.feedback_load.append(0.0)
 	extended.receptor.append([0.1,0.2,0.3,0.4,0.0,0.0,0.0,0.0])
 	extended.feedback_exchange.append([0.01,0.02,-0.01,0.0])

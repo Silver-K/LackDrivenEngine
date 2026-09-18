@@ -1,0 +1,88 @@
+{
+  "date": "2026-09-18",
+  "engine": "Godot 4.6.1",
+  "source_hashes_match_baseline": true,
+  "baseline_bundle_sha256": "5B80D30960973E4F93732FE908DA512E110E3E2058F48CAE633FE86EC7EFDDC1",
+  "passed_existing_tests": 60,
+  "diagnostic_failures": 0,
+  "matched_prefix_samples": 4824.0,
+  "baseline_probes_recomputed": 12,
+  "sources": [
+    {
+      "path": "godot/data/body_model.json",
+      "sha256": "ACB148C513E3ACCE45E91C5787F6D9AB20BB14706A6D6C51FACC5AA2C9FC6C9E"
+    },
+    {
+      "path": "godot/scripts/tension_core.gd",
+      "sha256": "237F7460296B47D2B2F04BA25FEE1DA56A77624EE18B4D6D453299FDDCD78AE4"
+    },
+    {
+      "path": "godot/scripts/physical_world.gd",
+      "sha256": "5D10DDB0578F4E60492F8168D5E5CA9EAB2E6955BD7A96E66815372860DAA3AD"
+    },
+    {
+      "path": "godot/scripts/runtime/body_physics.gd",
+      "sha256": "37D408A1596CDE0DC8389D250ECA3CD9D00832DC9F9FBF8455476DF79904524B"
+    },
+    {
+      "path": "godot/scripts/runtime/environment_fields.gd",
+      "sha256": "41993FF3340059E45A158AA5FBE1D84DE0DFDDA497772F04F882F96FC64B611A"
+    },
+    {
+      "path": "godot/scripts/subjects/planar_structure.gd",
+      "sha256": "B887E7F095C1F1EC60A8DD5FCACDDC64240171EC7B31AECC389C7CE24D1D5ED2"
+    },
+    {
+      "path": "godot/scripts/subjects/motor_dynamics.gd",
+      "sha256": "26C0FCC7F94A2D1B1687DC4E110EF65B0D79FE94350EA02945F1B17C3C987D1F"
+    },
+    {
+      "path": "godot/scripts/subjects/planar_senses.gd",
+      "sha256": "8E1CFFCBAB62E81DD7E4867C239F38A1C997A57DC403DA252C3D6D4D387C9377"
+    },
+    {
+      "path": "godot/scripts/subjects/planar_self_senses.gd",
+      "sha256": "56E2079377103BC536508E729959C087A20FDD246D2BE8A016D75E82FDC4D59C"
+    },
+    {
+      "path": "godot/scripts/subjects/planar_events.gd",
+      "sha256": "48FFBD37CD92F60033D9879EE183FF03D96DD3D08B98026722689B79A0C35963"
+    },
+    {
+      "path": "godot/scripts/subjects/trace_plasticity.gd",
+      "sha256": "5EC32F2977DB399DAE0A141F676894AFDAD721784F640B2733E3909505879923"
+    },
+    {
+      "path": "godot/scripts/room_experiment.gd",
+      "sha256": "DFAF5B1D40E70CD774C79A61337E0EE2BBE54C0057A28BF7A87BDB19AA732C4C"
+    },
+    {
+      "path": "godot/scripts/experiment_probe.gd",
+      "sha256": "BD3304E5610CA270E695676925A56DACBEB49CBB71FFB8431BDEAE6EEC1C6E2E"
+    },
+    {
+      "path": "godot/scripts/experience_comparison.gd",
+      "sha256": "066EBD8D06651AB81416337FB705610F4ED8B7F3B4F427B18371ECB26B0C3F98"
+    },
+    {
+      "path": "godot/scripts/room_view.gd",
+      "sha256": "F2FD2DD82550D669B074F09D84580F2EC9BF8B6D35ED030B13A91293C1E11F28"
+    },
+    {
+      "path": "godot/tests/run_experience_comparison.gd",
+      "sha256": "A73F875B01C165D3013842C732DC5C0FEF788C6D13DF2E6FC73AF31346220D8D"
+    },
+    {
+      "path": "godot/tests/test_experience_comparison.gd",
+      "sha256": "0E909C217DD9131EA53A820433944F18ACF839510070D63223C219BDF2F97D41"
+    },
+    {
+      "path": "godot/tests/test_experience_ui.gd",
+      "sha256": "C4BD6A9AED448F3485EAC86FD19E2E200E3B56F2D2BEF8AD3D4C125F0BC6A9B9"
+    },
+    {
+      "path": "godot/tests/run_experience_schedule_control.gd",
+      "sha256": "CDEE38F6A506A6C9A6321730C5DCE464D5FCE0836099FC3B9DE866C61EB54F91"
+    }
+  ]
+}

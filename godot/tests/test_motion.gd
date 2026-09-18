@@ -57,15 +57,14 @@ func _initialize() -> void:
  var delta: Vector2=base.bodies[0].position-start
  check((moved.bodies[0].position-base.bodies[0].position-offset).length()<0.1,"translation leaves motor dynamics unchanged")
  check((rotated.bodies[0].position-start-delta.rotated(PI/2)).length()<0.1,"rotation rotates the trajectory without a privileged world axis")
- check(base.bodies[0].motor_state==moved.bodies[0].motor_state,"motor fluctuation stream belongs to each independent body")
- # Remove fluctuations and hold internal state constant; propulsion must persist,
+ check(base.bodies[0].motor_state==moved.bodies[0].motor_state,"motor state changes are invariant under world translation")
+ # Hold internal state constant; propulsion must persist,
  # rather than turn back because an elapsed phase changes sign.
  var straight=World.new()
  straight.surfaces=[]
  straight.parameters[0].self_sense.enabled=false
  straight.room=Rect2(-100000,-100000,200000,200000)
  var sp: Dictionary=straight.parameters[0]
- sp.locomotion.fluctuation_gain=0
  sp.body_response.use_gain=0
  sp.body_response.load_gain=0
  sp.drift.fill(0.0)
