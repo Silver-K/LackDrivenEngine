@@ -24,7 +24,7 @@ func sense(index: int, bodies: Array, parameters: Array, surfaces: Array) -> Arr
   observed[0]=o.emission[0]*amplitude
   observed[1]=o.emission[1]*amplitude
   observed[2]=o.emission[2]*amplitude
-  samples.append({"origin":0,"plastic":true,"axis":delta.normalized(),"signal":observed,"geometry":Vector2.ZERO})
+  samples.append({"origin":0,"plastic":false,"axis":delta.normalized(),"signal":observed,"geometry":Vector2.ZERO})
  for j in range(bodies.size()):
   if j==index: continue
   var b: Dictionary = bodies[j]
@@ -40,5 +40,5 @@ func sense(index: int, bodies: Array, parameters: Array, surfaces: Array) -> Arr
   observed[1]=parameters[j].emission[1]*amplitude
   observed[2]=parameters[j].emission[2]*amplitude
   observed[3]=(b.velocity.length()/100.0+closing)*amplitude
-  samples.append({"origin":0,"plastic":true,"axis":delta.normalized(),"signal":observed,"geometry":geometry})
+  samples.append({"origin":0,"plastic":false,"axis":delta.normalized(),"signal":observed,"geometry":geometry})
  return samples

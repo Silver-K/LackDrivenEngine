@@ -16,7 +16,7 @@ const GREEN = Color("80dfba")
 const BLUE = Color("82baf5")
 const ORANGE = Color("eab789")
 const COLORS = [Color("80dfba"),Color("82baf5"),Color("d5a2d8"),Color("eab789")]
-const SAVE_PATH = "user://room-history-v5.bin"
+const SAVE_PATH = "user://room-history-v6.bin"
 
 func _ready() -> void:
  font.font_names = PackedStringArray(["Microsoft YaHei UI","Microsoft YaHei"])

@@ -28,6 +28,7 @@ func _init(config: Dictionary = {}) -> void:
 func sense(index: int) -> Array:
  var samples: Array=structure.senses.sense(index,bodies,parameters,surfaces)
  samples.append_array(structure.self_senses.sense(bodies[index],parameters[index],parameters[index].receptor[0].size()))
+ samples.append_array(structure.events.sense(parameters[index],bodies[index],samples,parameters[index].receptor[0].size()))
  return samples
 func association_strength(index: int) -> float:
  return structure.policy(parameters[index]).magnitude(bodies[index].memory)

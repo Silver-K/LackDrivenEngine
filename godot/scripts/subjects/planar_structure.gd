@@ -4,9 +4,11 @@ const Plasticity = preload("res://scripts/subjects/trace_plasticity.gd")
 const Senses = preload("res://scripts/subjects/planar_senses.gd")
 const Motor = preload("res://scripts/subjects/motor_dynamics.gd")
 const SelfSenses = preload("res://scripts/subjects/planar_self_senses.gd")
+const Events = preload("res://scripts/subjects/planar_events.gd")
 var motor_dynamics = Motor.new()
 var senses = Senses.new()
 var self_senses = SelfSenses.new()
+var events = Events.new()
 func validate(p: Dictionary) -> String:
  var n: int = p.get("state",[]).size()
  if n<3: return "This planar subject requires at least three dimensions"
@@ -29,6 +31,8 @@ func validate(p: Dictionary) -> String:
  if p.body_response.activation_initial<0 or p.body_response.activation_initial>1 or p.body_response.activation_rate<=0 or p.body_response.activation_slope<=0 or p.body_response.use_gain<0: return "Invalid actuator dynamics"
  var self_error=self_senses.validate(p.get("self_sense",{}),inputs)
  if not self_error.is_empty(): return self_error
+ var event_error=events.validate(p.get("event_sense",{}),inputs)
+ if not event_error.is_empty(): return event_error
  return ""
 func policy(p: Dictionary):
  return Plasticity.new(p.state.size(),p.get("trace_window",2.5))
@@ -36,7 +40,7 @@ func initial(p: Dictionary) -> Dictionary:
  var n: int = p.state.size()
  var zero: Array = []
  zero.resize(p.receptor[0].size()); zero.fill(0.0)
- return {"position":Vector2(p.position[0],p.position[1]),"velocity":Vector2.ZERO,"heading":p.locomotion.heading,"angular_velocity":0.0,"motor_state":motor_dynamics.initial(p.locomotion),"x":p.state.duplicate(),"trace":zero.duplicate(),"input":zero.duplicate(),"vectors":[],"contributions":[],"flux":0.0,"touch":-1,"memory":policy(p).create(p.get("associations",[])),"age":0.0,"outcome":policy(p).zeros(),"load":0.0,"effort":0.0,"strain":0.0,"activation":p.body_response.activation_initial,"contact_pressure":0.0}
+ return {"position":Vector2(p.position[0],p.position[1]),"velocity":Vector2.ZERO,"heading":p.locomotion.heading,"angular_velocity":0.0,"motor_state":motor_dynamics.initial(p.locomotion),"event_state":{},"x":p.state.duplicate(),"trace":zero.duplicate(),"input":zero.duplicate(),"vectors":[],"contributions":[],"flux":0.0,"touch":-1,"memory":policy(p).create(p.get("associations",[])),"age":0.0,"outcome":policy(p).zeros(),"load":0.0,"effort":0.0,"strain":0.0,"activation":p.body_response.activation_initial,"contact_pressure":0.0}
 func advance(p: Dictionary, a: Dictionary, samples: Array, dt: float) -> Dictionary:
  var learning = policy(p)
  learning.perceive(a.memory,samples.filter(func(sample):return sample.get("plastic",true)),dt)
@@ -75,13 +79,13 @@ func emit(p: Dictionary, a: Dictionary, samples: Array) -> Array:
    var item: Dictionary = a.memory[m]
    var overlap: float = learning.similarity(signature,item.signature)
    for j in range(a.x.size()):
-    add(output,[1,s,sample.get("origin",0),m,j],sample.axis*(-a.x[j]*item.effect[j]*overlap*signal_weight*p.dynamics.association_gain))
+    add(output,[1,s,sample.get("origin",0),sample.get("event_from",-1),m,j],sample.axis*(-a.x[j]*item.effect[j]*overlap*signal_weight*p.dynamics.association_gain))
   for j in range(a.x.size()):
    for k in range(sample.signal.size()):
-    add(output,[2,s,sample.get("origin",0),j,k],sample.axis*p.motor[j]*p.receptor[j][k]*sample.signal[k]*(p.dynamics.motor_offset+a.x[j])*p.dynamics.motor_gain)
+    add(output,[2,s,sample.get("origin",0),sample.get("event_from",-1),j,k],sample.axis*p.motor[j]*p.receptor[j][k]*sample.signal[k]*(p.dynamics.motor_offset+a.x[j])*p.dynamics.motor_gain)
   var novelty=0.0
   for k in range(sample.signal.size()): novelty+=absf(sample.signal[k]-a.previous_trace[k])
-  add(output,[3,s,sample.get("origin",0)],sample.axis*minf(p.dynamics.attention_limit,novelty*p.dynamics.attention_gain))
+  add(output,[3,s,sample.get("origin",0),sample.get("event_from",-1)],sample.axis*minf(p.dynamics.attention_limit,novelty*p.dynamics.attention_gain))
  output.append_array(motor_dynamics.emit(p.locomotion,a))
  return output
 func receive(p: Dictionary, a: Dictionary, physical: Dictionary, dt: float) -> Dictionary:

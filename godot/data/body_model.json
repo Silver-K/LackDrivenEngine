@@ -220,6 +220,27 @@
           }
         ],
         "plasticity": false
+      },
+      "event_sense": {
+        "enabled": true,
+        "external": [
+          {
+            "threshold": 0.035,
+            "release": 0.015,
+            "plasticity": true
+          }
+        ],
+        "self": [
+          {
+            "measure": "contact_pressure",
+            "input": 7,
+            "gain": 1.0,
+            "limit": 1.0,
+            "threshold": 0.05,
+            "release": 0.02,
+            "plasticity": true
+          }
+        ]
       }
     }
   ],
