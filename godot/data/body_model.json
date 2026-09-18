@@ -118,7 +118,7 @@
       "body_response": {
         "limit": 1.5,
         "load_gain": 0.03,
-        "recovery": 0.025,
+        "recovery": 0.035,
         "resistance": 0.15,
         "response": 4.0,
         "angular_drag": 1.5,
@@ -225,8 +225,40 @@
         "enabled": true,
         "external": [
           {
+            "features": [
+              0
+            ],
             "threshold": 0.035,
             "release": 0.015,
+            "resolution": 16,
+            "plasticity": true
+          },
+          {
+            "features": [
+              1
+            ],
+            "threshold": 0.035,
+            "release": 0.015,
+            "resolution": 16,
+            "plasticity": true
+          },
+          {
+            "features": [
+              2
+            ],
+            "threshold": 0.035,
+            "release": 0.015,
+            "resolution": 16,
+            "plasticity": true
+          },
+          {
+            "features": [
+              0,
+              2
+            ],
+            "threshold": 0.035,
+            "release": 0.015,
+            "resolution": 16,
             "plasticity": true
           }
         ],

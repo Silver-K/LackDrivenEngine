@@ -31,6 +31,20 @@ func apparatus_training(paired: bool):
 			source.field_strength=2.0 if tick>=(12 if paired else 70) and tick<(22 if paired else 80) else 0.0
 			world.step(0.1)
 	return world
+func apparatus_probe(world) -> float:
+	var p=world.parameters[0].duplicate(true)
+	p.plasticity_enabled=false
+	var body=world.structure.initial(p)
+	body.x=[0.1,0.1,0.1,0.8]
+	body.memory=world.bodies[0].memory.duplicate(true)
+	for item in body.memory:
+		item.trace=0.0
+		item.activation=0.0
+	var result=world.core.advance(world.structure,p,body,[{"origin":0,"plastic":false,"axis":Vector2.RIGHT,"signal":[0.08,0.08,1.0,0.0,0.0,0.0,0.0,0.0],"geometry":Vector2.ZERO}],0.1)
+	var force=0.0
+	for contribution in result.contributions:
+		if contribution.source[0]==1: force+=contribution.value.x
+	return force
 func _initialize() -> void:
 	var assoc = Assoc.new()
 	var paired: Array = []
@@ -53,8 +67,8 @@ func _initialize() -> void:
 	check(assoc.response(paired,[1.0,0.0,0.0,0.0],x) < response * 0.2, "unfulfilled cue presentations extinguish acquired response")
 	var paired_world=apparatus_training(true)
 	var delayed_world=apparatus_training(false)
-	var paired_effect=assoc.response(paired_world.bodies[0].memory,[0.08,0.08,1.0,0.0,0.0,0.0,0.0,0.0],[0.1,0.1,0.1,0.8])
-	var delayed_effect=assoc.response(delayed_world.bodies[0].memory,[0.08,0.08,1.0,0.0,0.0,0.0,0.0,0.0],[0.1,0.1,0.1,0.8])
+	var paired_effect=apparatus_probe(paired_world)
+	var delayed_effect=apparatus_probe(delayed_world)
 	check(paired_effect<0 and absf(paired_effect)>absf(delayed_effect)*2,"real physical apparatus pairing creates stronger opposing cue contribution than delayed control")
 	print("APPARATUS paired=",paired_effect," delayed=",delayed_effect)
 	var w = Model.new()

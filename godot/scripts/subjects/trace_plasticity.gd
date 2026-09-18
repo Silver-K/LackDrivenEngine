@@ -31,7 +31,7 @@ func create(priors: Array) -> Array:
   memory.append({"signature":unit(prior.signature), "effect":prior.effect.duplicate(), "trace":0.0, "activation":0.0, "exposure":0.0, "updates":0})
  return memory
 
-func perceive(memory: Array, samples: Array, dt: float) -> void:
+func perceive(memory: Array, samples: Array, dt: float, mutable: bool = true) -> void:
  for item in memory: item.activation = 0.0
  for sample in samples:
   var strength = 0.0
@@ -40,15 +40,21 @@ func perceive(memory: Array, samples: Array, dt: float) -> void:
   var signature: Array = unit(sample.signal)
   var found = false
   for item in memory:
-   if similarity(signature, item.signature) > 0.85: found = true
-  if not found and memory.size() < 32:
+   if matches(sample,item)>0.85: found = true
+  if mutable and sample.get("plastic",true) and not found and memory.size() < 32:
    memory.append({"signature":signature, "effect":zeros(), "trace":0.0, "activation":0.0, "exposure":0.0, "updates":0})
+   if sample.has("pattern"): memory[-1].pattern=sample.pattern
   for item in memory:
-   item.activation = maxf(item.activation, similarity(signature, item.signature) * minf(1.0, sqrt(strength) * 2.0))
+   item.activation = maxf(item.activation, matches(sample,item) * minf(1.0, sqrt(strength) * 2.0))
  for item in memory:
   # Trace follows a cue but survives its disappearance: temporal pairing is causal.
   item.trace = maxf(item.trace * exp(-dt / window), item.activation)
-  item.exposure += item.activation * dt
+  if mutable: item.exposure += item.activation * dt
+
+func matches(sample: Dictionary, item: Dictionary) -> float:
+ if sample.has("pattern") or item.has("pattern"):
+  return 1.0 if sample.get("pattern","")==item.get("pattern","") else 0.0
+ return similarity(unit(sample.signal),item.signature)
 
 func learn(memory: Array, outcome: Array, dt: float, rate: float) -> void:
  var predicted = zeros()

@@ -40,10 +40,14 @@ func initial(p: Dictionary) -> Dictionary:
  var n: int = p.state.size()
  var zero: Array = []
  zero.resize(p.receptor[0].size()); zero.fill(0.0)
- return {"position":Vector2(p.position[0],p.position[1]),"velocity":Vector2.ZERO,"heading":p.locomotion.heading,"angular_velocity":0.0,"motor_state":motor_dynamics.initial(p.locomotion),"event_state":{},"x":p.state.duplicate(),"trace":zero.duplicate(),"input":zero.duplicate(),"vectors":[],"contributions":[],"flux":0.0,"touch":-1,"memory":policy(p).create(p.get("associations",[])),"age":0.0,"outcome":policy(p).zeros(),"load":0.0,"effort":0.0,"strain":0.0,"activation":p.body_response.activation_initial,"contact_pressure":0.0}
+ return {"position":Vector2(p.position[0],p.position[1]),"velocity":Vector2.ZERO,"heading":p.locomotion.heading,"angular_velocity":0.0,"motor_state":motor_dynamics.initial(p.locomotion),"event_state":{},"pattern_samples":[],"sensory_snapshot":[],"x":p.state.duplicate(),"trace":zero.duplicate(),"input":zero.duplicate(),"vectors":[],"contributions":[],"flux":0.0,"touch":-1,"memory":policy(p).create(p.get("associations",[])),"age":0.0,"outcome":policy(p).zeros(),"load":0.0,"effort":0.0,"strain":0.0,"activation":p.body_response.activation_initial,"contact_pressure":0.0}
 func advance(p: Dictionary, a: Dictionary, samples: Array, dt: float) -> Dictionary:
  var learning = policy(p)
- learning.perceive(a.memory,samples.filter(func(sample):return sample.get("plastic",true)),dt)
+ a.sensory_snapshot=samples.duplicate(true)
+ a.pattern_samples=events.sense(p,a,samples,p.receptor[0].size())
+ var learning_samples=a.pattern_samples.duplicate(true)
+ learning_samples.append_array(samples.filter(func(sample):return sample.get("plastic",false)))
+ learning.perceive(a.memory,learning_samples,dt,p.plasticity_enabled)
  var input: Array = []
  input.resize(p.receptor[0].size()); input.fill(0.0)
  for sample in samples:
@@ -77,6 +81,7 @@ func emit(p: Dictionary, a: Dictionary, samples: Array) -> Array:
   var signal_weight: float = minf(1.0,sqrt(signal_power))
   for m in range(a.memory.size()):
    var item: Dictionary = a.memory[m]
+   if item.has("pattern"): continue
    var overlap: float = learning.similarity(signature,item.signature)
    for j in range(a.x.size()):
     add(output,[1,s,sample.get("origin",0),sample.get("event_from",-1),m,j],sample.axis*(-a.x[j]*item.effect[j]*overlap*signal_weight*p.dynamics.association_gain))
@@ -86,6 +91,13 @@ func emit(p: Dictionary, a: Dictionary, samples: Array) -> Array:
   var novelty=0.0
   for k in range(sample.signal.size()): novelty+=absf(sample.signal[k]-a.previous_trace[k])
   add(output,[3,s,sample.get("origin",0),sample.get("event_from",-1)],sample.axis*minf(p.dynamics.attention_limit,novelty*p.dynamics.attention_gain))
+ for pattern in a.get("pattern_samples",[]):
+  for item in a.memory:
+   if item.get("pattern","")!=pattern.pattern: continue
+   var supports: Array=pattern.get("supports",[{"axis":pattern.axis,"strength":pattern.strength}])
+   for s in range(supports.size()):
+    for j in range(a.x.size()):
+     add(output,[1,pattern.pattern,s,j],supports[s].axis*(-a.x[j]*item.effect[j]*minf(1.0,supports[s].strength)*p.dynamics.association_gain))
  output.append_array(motor_dynamics.emit(p.locomotion,a))
  return output
 func receive(p: Dictionary, a: Dictionary, physical: Dictionary, dt: float) -> Dictionary:

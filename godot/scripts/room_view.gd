@@ -1,7 +1,15 @@
 extends Control
 ## Read-only presentation of states and physical apparatus controls.
 const Experiment = preload("res://scripts/room_experiment.gd")
+const Probe=preload("res://scripts/experiment_probe.gd")
+const Observation=preload("res://scripts/causal_observation.gd")
 var experiment = Experiment.new()
+var probe=Probe.new()
+var observer=Observation.new()
+var details=RichTextLabel.new()
+var detail_mode=""
+var resume_after_details=false
+var selected_probe=2
 var font = SystemFont.new()
 var paused = false
 var speed = 1
@@ -16,14 +24,21 @@ const GREEN = Color("80dfba")
 const BLUE = Color("82baf5")
 const ORANGE = Color("eab789")
 const COLORS = [Color("80dfba"),Color("82baf5"),Color("d5a2d8"),Color("eab789")]
-const SAVE_PATH = "user://room-history-v6.bin"
+const SAVE_PATH = "user://room-history-v8.bin"
 
 func _ready() -> void:
+ details.add_theme_font_override("normal_font",font)
+ details.add_theme_font_size_override("normal_font_size",15)
+ details.selection_enabled=true
+ details.visible=false
+ add_child(details)
+ probe.capture(experiment)
  font.font_names = PackedStringArray(["Microsoft YaHei UI","Microsoft YaHei"])
- if "--lab-smoke" in OS.get_cmdline_user_args():
+ if "--lab-smoke" in OS.get_cmdline_user_args() or "--probe-smoke" in OS.get_cmdline_user_args():
   experiment.set_stage(3)
   for i in range(1200): experiment.step(1.0/60.0)
   paused = true
+  if "--probe-smoke" in OS.get_cmdline_user_args(): handle_action("probe")
  queue_redraw()
 
 func _process(dt: float) -> void:
@@ -34,18 +49,41 @@ func _process(dt: float) -> void:
    experiment.step(1.0/60.0)
    accumulator-=1.0/60.0
  queue_redraw()
- if frames==4 and "--lab-smoke" in OS.get_cmdline_user_args():
+ if frames==4 and ("--lab-smoke" in OS.get_cmdline_user_args() or "--probe-smoke" in OS.get_cmdline_user_args()):
   await RenderingServer.frame_post_draw
-  get_viewport().get_texture().get_image().save_png(ProjectSettings.globalize_path("res://../artifacts/minimal-room.png"))
+  get_viewport().get_texture().get_image().save_png(ProjectSettings.globalize_path("res://../artifacts/probe-room.png" if "--probe-smoke" in OS.get_cmdline_user_args() else "res://../artifacts/minimal-room.png"))
   get_tree().quit()
 
 func handle_action(action: String) -> void:
- if action.begins_with("stage"):
+ if not detail_mode.is_empty() and not (action=="close_details" or action.begins_with("case")): return
+ if action=="close_details":
+  detail_mode=""
+  details.visible=false
+  paused=not resume_after_details
+ elif action=="inspect": open_details("inspect")
+ elif action=="checkpoint":
+  probe.capture(experiment)
+  status="已记录训练前参考状态；随后让主体经历环境，再运行冻结探测。"
+ elif action=="train_pair":
+  experiment.combination_training=true
+  experiment.moving_source=false
+  experiment.cue_only=false
+  experiment.apparatus_time=0.0
+  experiment.configure()
+  status="组合训练 P+Q：仅装置启用，身体自由活动；切换阶段可返回原场景。"
+ elif action=="probe":
+  if probe.run(experiment): open_details("probe")
+  else: status="结构与参考状态不一致，请重新记录训练前参考状态。"
+ elif action.begins_with("case"):
+  selected_probe=int(action.right(1))
+  refresh_details()
+ elif action.begins_with("stage"):
   experiment.set_stage(int(action.right(1)))
  elif action=="pause": paused = not paused
  elif action=="speed": speed = 4 if speed==1 else 1
  elif action=="reset":
   experiment.reset()
+  probe.capture(experiment)
   accumulator = 0.0
   status = "已回到相同初始身体与空白关联；保留当前环境开关。"
  elif action=="cue":
@@ -64,9 +102,23 @@ func handle_action(action: String) -> void:
  elif action=="save": status = "已保存完整经历与装置时钟。" if experiment.save_history(SAVE_PATH) else "保存失败。"
  elif action=="load":
   var restored = experiment.load_history(SAVE_PATH)
-  if restored: accumulator = 0.0
+  if restored:
+   accumulator = 0.0
+   probe.capture(experiment)
   status = "已恢复经历，可继续同一条时间线。" if restored else "未找到兼容的房间记录。"
  queue_redraw()
+
+func open_details(mode: String) -> void:
+ if detail_mode.is_empty(): resume_after_details=not paused
+ paused=true
+ detail_mode=mode
+ details.visible=true
+ refresh_details()
+func refresh_details() -> void:
+ if detail_mode=="inspect": details.text=observer.describe(experiment.simulation.observe(0))
+ elif detail_mode=="probe":
+  details.text=probe.summary()+"\n当前记忆 · "+probe.results[selected_probe].name+" · 首步因果记录\n\n"+observer.describe(probe.results[selected_probe].pair[1].first)+"\n参考记忆 · 首步因果记录\n\n"+observer.describe(probe.results[selected_probe].pair[0].first)
+ details.scroll_to_line(0)
 
 func _gui_input(event: InputEvent) -> void:
  if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
@@ -116,11 +168,15 @@ func _draw() -> void:
  label_at("一个身体，一段经历",Vector2(40,84),32)
  label_at("最小耦合实验  /  01",Vector2(1110,45),18)
  label_at("无环境先验 · 连续作用 · 时序关联",Vector2(40,110),16,MUTED)
+ button_at("inspect","因果观察",Rect2(510,35,150,36))
+ button_at("checkpoint","记录训练前",Rect2(675,35,150,36))
+ button_at("probe","冻结探测",Rect2(840,35,150,36))
+ button_at("train_pair","组合训练 P+Q",Rect2(510,82,190,36),experiment.combination_training)
  var sim = experiment.simulation
  label_at("%07.1f s   /   %s   /   %d×" % [sim.time,"暂停" if paused else "运行中",speed],Vector2(1110,80),17,GREEN)
  var stages=["01  空房间","02  加入交换 A","03  线索 → 扰动","04  B 与遮蔽"]
  for i in range(4): button_at("stage%d" % i,stages[i],Rect2(40+i*260,134,246,42),experiment.stage==i)
- label_at("阶段只改变环境，保留身体与经历。重置可从空白关联重新开始。",Vector2(42,199),15,MUTED)
+ label_at("组合训练：仅 P+Q 装置；切换阶段返回自由环境。" if experiment.combination_training else "阶段只改变环境，保留身体与经历。重置可从空白关联重新开始。",Vector2(42,199),15,MUTED)
  draw_room()
  draw_observation()
  draw_graphs()
@@ -129,6 +185,15 @@ func _draw() -> void:
  for i in range(actions.size()):
   button_at(actions[i],names[i],Rect2(40+i*137,823,126,38),actions[i]=="cue" and experiment.cue_only)
  label_at(status,Vector2(42,887),14,MUTED)
+ if not detail_mode.is_empty():
+  panel(Rect2(40,215,1030,583),Color("15272e"))
+  button_at("close_details","返回现场",Rect2(900,228,145,36))
+  if detail_mode=="probe":
+   for i in range(4): button_at("case%d" % i,["P","Q","P+Q","R+Q"][i],Rect2(60+i*160,228,145,36),selected_probe==i)
+  else: label_at("只读快照 · 滚动查看完整因果链",Vector2(62,252),18,GREEN)
+  details.position=Vector2(60,280)*canvas_scale()
+  details.size=Vector2(985,495)*canvas_scale()
+  details.add_theme_font_size_override("normal_font_size",int(15*canvas_scale()))
  if not sim.last_error.is_empty(): label_at(sim.last_error,Vector2(40,810),16,Color.RED)
 
 func draw_room() -> void:
@@ -163,7 +228,7 @@ func draw_room() -> void:
    draw_circle(o.position,9,color)
    label_at("扰动" if active else ("线索" if cue else "间歇"),o.position+Vector2(18,-16),14,color)
  if experiment.stage>=3: label_at("遮蔽 · 仅改变传播与通行",Vector2(786,565),13,MUTED)
- var body: Dictionary = sim.bodies[0]
+ var body: Dictionary = sim.observe(0)
  if show_vectors:
   for contribution in body.contributions:
    if contribution.channel==1:
@@ -193,7 +258,7 @@ func draw_room() -> void:
 func draw_observation() -> void:
  panel(Rect2(1090,134,310,664))
  var sim = experiment.simulation
- var body: Dictionary = sim.bodies[0]
+ var body: Dictionary = sim.observe(0)
  label_at("主体 01",Vector2(1110,165),20)
  label_at("空白关联起步 / 四维结构",Vector2(1110,192),14,MUTED)
  for i in range(body.x.size()):
@@ -212,7 +277,8 @@ func draw_observation() -> void:
  draw_line(Vector2(1110,553),Vector2(1380,553),Color("334950"),1)
  label_at("接触与装置记录",Vector2(1110,584),16)
  for i in range(experiment.events.size()): label_at(experiment.events[i],Vector2(1110,616+i*25),12,MUTED)
- label_at("颜色表示数值来源，不是情绪。",Vector2(1110,779),13,MUTED)
+ var patterns: Array=body.get("pattern_samples",[])
+ label_at("感受 %d  /  模式 %d  /  新事件 %d" % [body.get("sensory_snapshot",[]).size(),patterns.size(),patterns.filter(func(v):return v.rising).size()],Vector2(1110,779),13,MUTED)
 
 func draw_graphs() -> void:
  for g in range(3):

@@ -8,6 +8,7 @@ var cue_only = false
 var exchange_enabled = true
 var relocated = false
 var moving_source = true
+var combination_training = false
 var samples: Array = []
 var path: Array = []
 var events: Array = []
@@ -29,11 +30,15 @@ func configure() -> void:
  objects[1].position = Vector2(390,435) if relocated else Vector2(685,435)
  var source: Dictionary = objects[5]
  source.position = Vector2(760+sin(apparatus_time*0.13)*110,325+sin(apparatus_time*0.21)*45) if moving_source else Vector2(760,325)
+ if combination_training:
+  for i in range(5): objects[i].active=false
+  source.active=true
  var phase = fmod(apparatus_time,12.0)
- source.emission = [0.08,0.08,1.0] if phase<1.5 else [0.0,0.0,0.0]
+ source.emission = ([0.8,0.0,0.8] if combination_training else [0.08,0.08,1.0]) if phase<1.5 else [0.0,0.0,0.0]
  source.field_strength = 2.0 if phase>=1.5 and phase<3.5 and not cue_only else 0.0
 
 func set_stage(value: int) -> void:
+ combination_training = false
  stage = clampi(value,0,3)
  apparatus_time = 0.0
  configure()
@@ -71,11 +76,11 @@ func reset() -> void:
  log_event("初始状态重置 · 环境开关保留")
 
 func snapshot() -> Dictionary:
- return {"format":"tension-room","version":6,"room":simulation.room,"bodies":simulation.bodies.duplicate(true),"surfaces":simulation.surfaces.duplicate(true),"parameters":simulation.parameters.duplicate(true),"time":simulation.time,"stage":stage,"apparatus_time":apparatus_time,"cue_only":cue_only,"exchange_enabled":exchange_enabled,"relocated":relocated,"moving_source":moving_source,"samples":samples.duplicate(true),"path":path.duplicate(),"events":events.duplicate(),"sample_clock":sample_clock,"previous_touch":previous_touch}
+ return {"format":"tension-room","version":8,"room":simulation.room,"bodies":simulation.bodies.duplicate(true),"surfaces":simulation.surfaces.duplicate(true),"parameters":simulation.parameters.duplicate(true),"time":simulation.time,"stage":stage,"apparatus_time":apparatus_time,"cue_only":cue_only,"exchange_enabled":exchange_enabled,"relocated":relocated,"moving_source":moving_source,"combination_training":combination_training,"samples":samples.duplicate(true),"path":path.duplicate(),"events":events.duplicate(),"sample_clock":sample_clock,"previous_touch":previous_touch}
 
 func restore(data: Dictionary) -> bool:
- if data.get("format","")!="tension-room" or data.get("version",0)!=6: return false
- for key in ["room","bodies","surfaces","parameters","time","stage","apparatus_time","cue_only","exchange_enabled","relocated","moving_source","samples","path","events","sample_clock","previous_touch"]:
+ if data.get("format","")!="tension-room" or data.get("version",0)!=8: return false
+ for key in ["room","bodies","surfaces","parameters","time","stage","apparatus_time","cue_only","exchange_enabled","relocated","moving_source","combination_training","samples","path","events","sample_clock","previous_touch"]:
   if not data.has(key): return false
  if data.bodies.size()!=1 or data.parameters.size()!=1 or data.surfaces.size()!=6: return false
  if not simulation.core.validate(simulation.structure,data.parameters[0]).is_empty(): return false
@@ -91,6 +96,7 @@ func restore(data: Dictionary) -> bool:
  exchange_enabled = data.exchange_enabled
  relocated = data.relocated
  moving_source = data.moving_source
+ combination_training = data.combination_training
  samples = data.samples.duplicate(true)
  path = data.path.duplicate()
  events = data.events.duplicate()
